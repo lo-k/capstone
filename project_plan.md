@@ -3,6 +3,7 @@
 ---
 ####Problem Statment
 Sometimes you want to listen to music according to your mood, but you don't want to manually find it.
+
 ---
 ####Market Research 
 Existing Apps 
@@ -22,11 +23,13 @@ APIs
       - Can query for that [station](http://songza.com/api/1/station/1399111)
         - Results include a url which will play that playlist on songza's website... not able to embedd the player
   - lastfm.com
+
 ---
 ####User Personas
   - People who want to have music suggested to them (people ages 15-30?)
   - People who are at a social gathering and want a playlist decided for them based on the context of the situation
   - People who want to play around with a gimmiky app at a party
+
 ---
 ####Tools/Technologies
 User-Facing App
