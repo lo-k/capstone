@@ -1,2 +1,2 @@
-# capstone
+# Capstone
 Final Ada capstone project
