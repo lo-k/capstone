@@ -1,5 +1,6 @@
-###FINAL CAPSTONE PROJECT PLAN
+##Final Capstone Project Plan
 [Trello Board](https://trello.com/b/qtN8AnOF/capstone)
+
 ---
 ####Problem Statment
 Sometimes you want to listen to music according to your mood, but you don't want to manually find it.
