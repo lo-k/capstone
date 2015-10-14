@@ -1,4 +1,13 @@
 <h1>Welcome user!</h1>
 <h2>Upload your video</h2>
 
+<%= form_tag something_path do %>
+  <div class="form-group">
+      <%= label_tag :file %>
+      <%= file_field_tag :file %>
+
+      <%= submit_tag 'Upload Video', class: "btn btn-default" %>
+    </div>
+<% end %>
+
 

@@ -25,7 +25,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bootstrap-sass'
 
+# For making API requests
 gem 'httparty'
+# To allow for multi-form uploads (for Emotient API)
+gem 'httmultiparty'
+gem 'multipart-post'
+gem 'mimemagic'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
