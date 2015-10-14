@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get '/home' => 'users#home'
+  
+  post '/upload' => 'users#upload_video'
+
+  get '/playlist' => 'users#playlist'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
