@@ -11,14 +11,13 @@ class UsersController < ApplicationController
     # delete it after done ideally (eventually os should del it)
     # in prod could write a sweeper progr to get rid fo them later
 
-    # JS that validates size of video
+    # JS that validates size of video (Andrew says way more complicated)
     upload = params[:video]
-    video = ActionDispatch::Http::UploadedFile.new(:tempfile => upload)
+    video = UploadIO.new(upload, 'video/quicktime', upload)
     # validate size of file here
 
-    test_vid = 'alice_sad.MOV'
-    video_id = EmotientApi.new.upload_video(test_vid)
-    
+    video_id = EmotientApi.new.upload_video(video)
+
     raise
     
     redirect_to playlist_path
