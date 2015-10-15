@@ -5,10 +5,19 @@ class UsersController < ApplicationController
   end
 
   def upload_video
+
+    # create temp file (ruby method... /tmp)
+    # creates it w random name (in ruby method)
+    # delete it after done ideally (eventually os should del it)
+    # in prod could write a sweeper progr to get rid fo them later
+
+    # JS that validates size of video
     upload = params[:video]
     video = ActionDispatch::Http::UploadedFile.new(:tempfile => upload)
+    # validate size of file here
 
-    video_id = EmotientApi.new.upload_video(video)
+    test_vid = 'alice_sad.MOV'
+    video_id = EmotientApi.new.upload_video(test_vid)
     
     raise
     
