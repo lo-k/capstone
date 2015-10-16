@@ -4,6 +4,8 @@ gem 'dotenv-rails', :groups => [:development, :test]
 # Auth
 gem 'omniauth'
 gem 'omniauth-spotify'
+# Spotify API gem
+gem 'rspotify'
 
 # For making API requests
 gem 'httparty'
