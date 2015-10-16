@@ -1,4 +1,4 @@
-<h1>Welcome user!</h1>
+<h1>Welcome <%= @user.name %>!</h1>
 <h2>Upload your video</h2>
 
 <%= form_tag upload_path do %>
@@ -10,4 +10,5 @@
     </div>
 <% end %>
 
+<%= button_to "Dev Test Button", upload_path %>
 
