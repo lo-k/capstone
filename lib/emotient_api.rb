@@ -16,24 +16,21 @@ class EmotientApi
   end
 
   def analyze_video(video_id)
-    response = HTTMultiParty.get(EMO_URI + "analytics/" + video_id + "/aggregate?interval=" + 
-      INTERVAL + "&report=" + REPORT + "&gender=" + GENDER,
+    response = HTTMultiParty.get(EMO_URI + "analytics/" + video_id + 
+      "/default/emotions?gender=combined&genderfilter=none&interval=summary&report=advanced",
       :headers => { 'Authorization' => "a4687ea8-a1b0-4c24-88a7-3220f865a27a" })
 
     emotions_hash = {
-      sentiment: response.parsed_response[1][11],
-      positive: response.parsed_response[1][12],
-      negative: response.parsed_response[1][13],
-      neutral: response.parsed_response[1][14],
-      anger: response.parsed_response[1][15],
-      contempt: response.parsed_response[1][16],
-      disgust: response.parsed_response[1][17],
-      fear: response.parsed_response[1][18],
-      joy: response.parsed_response[1][19],
-      sadness: response.parsed_response[1][20],
-      surprise: response.parsed_response[1][21]
+      disgust: response.parsed_response["data"]["disgust"],
+      contempt: response.parsed_response["data"]["contempt"],
+      surprise: response.parsed_response["data"]["surprise"],
+      joy: response.parsed_response["data"]["joy"],
+      anger: response.parsed_response["data"]["anger"],
+      fear: response.parsed_response["data"]["fear"],
+      sadness: response.parsed_response["data"]["sadness"] 
     }
 
+    raise
     return emotions_hash
   end
 
