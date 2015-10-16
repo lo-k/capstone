@@ -2,7 +2,7 @@ class EmoPlaylistCalc
 
   def select_playlist_category(emotions_hash)
 
-    category = "happy"
+    category = "party"
 
     return category
   end

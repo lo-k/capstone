@@ -1,4 +1,7 @@
+require 'rspotify'
+
 class SpotifyApi
+  RSpotify.authenticate(ENV['SPOTIFY_APP_ID'], ENV['SPOTIFY_APP_SECRET'])
 
   CATEGORIES = {
     toplists: "Top Lists",
@@ -27,9 +30,13 @@ class SpotifyApi
 
   def get_playlist(category)
     index = rand(0..LIMIT)
-    response = HTTMultiParty.get("https://api.spotify.com/v1/browse/categories/" + 
-      category + "/playlists?limit=#{LIMIT}",
-      :headers => { 'Authorization' => "" } )
+  
+    # currently pulling 20 records... figure out how to limit it?
+    all_playlists = RSpotify::Category.find(category).playlists
+
+    playlist_uri = all_playlists[index].uri
+
+    return playlist_uri
   end
 
 end

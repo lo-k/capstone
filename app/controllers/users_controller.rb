@@ -20,13 +20,12 @@ class UsersController < ApplicationController
 
     emo_results = EmotientApi.new.analyze_video(video_id)
     playlist_category = EmoPlaylistCalc.new.select_playlist_category(emo_results)
-    spotify_playlist_id = SpotifyApi.new.get_playlist(playlist_category)
-    raise 
 
-    redirect_to playlist_path
+    redirect_to playlist_path(playlist_category)
   end
 
   def playlist
+    @playlist_uri = SpotifyApi.new.get_playlist(params[:playlist_category])
 
   end
 
