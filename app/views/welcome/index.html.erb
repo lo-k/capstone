@@ -1,4 +1,8 @@
-<h1>Melfie</h1>
+<h1>Music Selfie</h1>
 <h3>Turn a selfie into music</h3>
 
-<p>** SIGN IN WITH SPOTIFY**</p>
+<% if !flash.empty? %>
+  <p><%= flash[:error] %><p>
+<% end %>
+
+<%= link_to "Sign In With Spotify", '/auth/spotify', class: "btn btn-default" %>
