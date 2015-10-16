@@ -30,7 +30,6 @@ class EmotientApi
       sadness: response.parsed_response["data"]["sadness"] 
     }
 
-    raise
     return emotions_hash
   end
 

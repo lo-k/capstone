@@ -4,26 +4,26 @@ class SpotifyApi
   RSpotify.authenticate(ENV['SPOTIFY_APP_ID'], ENV['SPOTIFY_APP_SECRET'])
 
   CATEGORIES = {
-    toplists: "Top Lists",
+    toplists: "Top Lists", # X
     mood: "Mood",
-    party: "Party",
-    pop: "Pop",
-    popculture: "Trending",
-    focus: "Focus",
-    rock: "Rock",
-    indie_alt: "Indie/Alternative",
-    edm_dance: "EDM/Dance",
-    chill: "Chill",
-    dinner: "Dinner",
-    sleep: "Sleep",
-    hiphop: "Hip Hop",
-    workout: "Workout",
-    rnb: "RnB",
-    country: "Country",
-    folk_americana: "Folk & Americana",
-    metal: "Metal",
-    soul: "Soul",
-    travel: "Travel"
+    party: "Party", # √
+    pop: "Pop", # √
+    popculture: "Trending", # X 
+    focus: "Focus", # X
+    rock: "Rock", # √
+    indie_alt: "Indie/Alternative", # √
+    edm_dance: "EDM/Dance", # √
+    chill: "Chill", # √
+    dinner: "Dinner", # X
+    sleep: "Sleep", # √
+    hiphop: "Hip Hop", # √
+    workout: "Workout", # √
+    rnb: "RnB", # X
+    country: "Country", # X
+    folk_americana: "Folk & Americana", # X
+    metal: "Metal", # √
+    soul: "Soul", # √
+    travel: "Travel" # √
   }
 
   LIMIT = 5
