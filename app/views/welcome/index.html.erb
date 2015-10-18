@@ -1,8 +1,21 @@
-<h1>Music Selfie</h1>
-<h3>Turn a selfie into music</h3>
+<div class="selfie-hero bcg">
+  <% if !flash.empty? %>
+    <p><%= flash[:error] %><p>
+  <% end %>
 
-<% if !flash.empty? %>
-  <p><%= flash[:error] %><p>
-<% end %>
+  <h1 class="logo">music selfie</h1>
+  <%= link_to "Sign In With Spotify", '/auth/spotify', class: "btn sign-in" %>
+</div>
 
-<%= link_to "Sign In With Spotify", '/auth/spotify', class: "btn btn-default" %>
+<div class="selfie-video bcg">
+  <h3 id="turn-video-text">Turn a video...</h3> 
+</div>
+
+<div class="selfie-music bcg">
+  <h3 id="into-music-text">into music</h3>
+  <hr>
+  <h5> Contact | FAQs | 2015 </h5>
+</div>
+
+
+

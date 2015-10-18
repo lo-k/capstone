@@ -16,3 +16,102 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+// MAIN LOGO... font-family: 'Raleway Dots', cursive; (font-weight: 400)
+// body text... font-family: 'Roboto', sans-serif; (font-weights: 100 , 400)
+
+html {
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+}
+
+body {
+
+  font-family: 'Roboto', sans-serif;
+  margin: 0 auto;
+}
+
+.logo {
+  font-family: 'Raleway Dots', cursive;
+}
+
+h1 {
+  font-size: 9em;
+  color: #fff;
+  text-align: center;
+  padding-top: 200px;
+  margin: 0;
+}
+
+.btn {
+  border: 1px solid #fff;
+  padding: 10px 20px;
+  color: #fff;
+}
+
+.btn:hover {
+  color: #fff;
+}
+
+.sign-in {
+  display: block;
+  margin: 0 auto;
+  width: 20%;
+  margin-top: 250px;
+}
+
+h3 {
+  font-size: 5em;
+  font-weight: 100;
+  color: #fff;
+  margin: 0;
+}
+
+#turn-video-text {
+  padding-top: 60px;
+  padding-left: 700px;
+}
+
+#into-music-text {
+  padding-top: 60px;
+  padding-left: 60px;
+}
+
+h5 {
+  font-weight: 100;
+  font-size: 1em;
+  color: #fff;
+  text-align: center;
+}
+
+hr {
+  margin-top: 400px;
+  width: 50%;
+}
+
+
+.bcg {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  width: 100%;
+}
+
+.selfie-hero {
+  background-image: url("selfie.jpg");
+  height: 900px;
+}
+
+.selfie-video {
+  background-image: url("selfie-video.jpg");
+  height: 600px;
+}
+
+.selfie-music {
+  background-image: url("selfie-music.jpg");
+  height: 600px;
+}
+
