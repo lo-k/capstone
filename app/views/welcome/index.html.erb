@@ -4,7 +4,10 @@
   <% end %>
 
   <h1 class="logo">music selfie</h1>
-  <%= link_to "Sign In With Spotify", '/auth/spotify', class: "btn sign-in" %>
+  
+  <%= link_to '/auth/spotify', class: "btn sign-in" do %>
+    <h4>Sign In With</h4><%= image_tag('spotify_logo.png') %>
+  <% end %>
 </div>
 
 <div class="selfie-video bcg">

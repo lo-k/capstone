@@ -27,8 +27,8 @@ html {
 }
 
 body {
-
   font-family: 'Roboto', sans-serif;
+  font-weight: 100;
   margin: 0 auto;
 }
 
@@ -59,6 +59,12 @@ h1 {
   margin: 0 auto;
   width: 20%;
   margin-top: 250px;
+}
+
+.sign-in h4 {
+  display: inline-block;
+  font-size: 1em;
+  font-weight: 100;
 }
 
 h3 {
