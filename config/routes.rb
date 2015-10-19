@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   # OmniAuth callback
   match '/auth/spotify/callback', to: 'sessions#create', via: [:get, :post]
 
+  get '/signout' => 'sessions#destroy'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

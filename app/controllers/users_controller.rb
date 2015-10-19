@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   end
 
   def upload_video
+    # Need to temp store the video so it has a file path
     # Need to adapt this to handle other video file types
     # upload = params[:video]
     # video = UploadIO.new(upload, 'video/quicktime', upload)
@@ -18,8 +19,10 @@ class UsersController < ApplicationController
     # video_id = "cf1efe65-05f4-a19d-b488-ddbe0211042a"
 
     # kari_mixed_emotions
-    video_id = "cf82beda-9600-8be9-cc04-414802410442"
+    # video_id = "cf82beda-9600-8be9-cc04-414802410442"
 
+    video_id = "d2f06aa9-b449-306f-f91c-e6bc02e104ec"
+    
     emo_results = EmotientApi.new.analyze_video(video_id)
     playlist_category = EmoPlaylistCalc.new.select_playlist_category(emo_results)
 

@@ -15,3 +15,9 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
+
+
+$(".show-colors").click(function() {
+  console.log('hello');
+  $('.track-title').css('color', 'red');
+})
