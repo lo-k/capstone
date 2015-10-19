@@ -8,49 +8,73 @@ class UsersController < ApplicationController
   end
 
   def upload_video
-    # Need to temp store the video so it has a file path
-    # Need to adapt this to handle other video file types
     upload = params[:video]
-    video = UploadIO.new(upload.tempfile, upload.content_type, upload.original_filename)
-    raise
-    video_id = EmotientApi.new.upload_video(video)
+    upload_validation_status = EmotientApi.new.validate_video(upload)
+    
+    if upload_validation_status == "OK"
+      # video = UploadIO.new(upload.tempfile, upload.content_type, upload.original_filename)
+      # video_id = EmotientApi.new.upload_video(video)
 
-    # kari_mixed_emotions
-    # video_id = "cf82beda-9600-8be9-cc04-414802410442"
+      # kari_mixed_emotions
+      video_id = "cf82beda-9600-8be9-cc04-414802410442"
 
-    # q video
-    # video_id = "d2f06aa9-b449-306f-f91c-e6bc02e104ec"
-    video_status = "Analyzing"
+      # q video
+      # video_id = "d2f06aa9-b449-306f-f91c-e6bc02e104ec"
 
-    until video_status != "Analyzing"
-      # t = Time.now
       video_status = EmotientApi.new.check_video_status(video_id)
-      
-      sleep 5
-      # sleep(t + 10 - Time.now)
-    end
 
-    if video_status == "Analysis Complete"
-      emo_results = EmotientApi.new.analyze_video(video_id)
-      playlist_category = EmoPlaylistCalc.new.select_playlist_category(emo_results)
-    else 
-      flash[:error] = "There was an error with your video. Please try again."
-    end
+      until video_status != "Analyzing"
+        sleep 5
+        video_status = EmotientApi.new.check_video_status(video_id)
+      end
 
-    redirect_to playlist_path(playlist_category)
+      if video_status == "Analysis Complete"
+        @emo_results = EmotientApi.new.analyze_video(video_id)
+        @playlist_category = EmoPlaylistCalc.new.select_playlist_category(@emo_results)
+      else 
+        flash[:error] = "There was an error with your video. Please try again."
+      end
+
+      redirect_to playlist_path
+    else
+      flash[:error] = upload_validation_status
+
+      redirect_to home_path
+    end
   end
 
   def playlist
-    @playlist_uri = SpotifyApi.new.get_playlist(params[:playlist_category])
+    raise
+    @playlist_uri = SpotifyApi.new.get_playlist(@playlist_category)
+    @emotions_percents_hash = calc_emo_percents(@emo_results)
+  end
 
-    @disgust_percent = ((0.27/16.34)* 100).round(1)
-    @contempt_percent = ((0/16.34) * 100).round(1)
-    @surprise_percent = ((2.86/16.34) * 100).round(1)
-    @joy_percent = ((13.21/16.34) * 100).round(1)
-    @anger_percent = ((0/16.34) * 100).round(1)
-    @fear_percent = ((0/16.34) * 100).round(1)
-    @sadness_percent = ((0/16.34) * 100).round(1)
+#########################################
+  private
 
+  def calc_emo_percents(emo_results_hash)
+    emo_percents_hash = {}
+    total = 0
+
+    emo_results_hash.each do |key, value|
+      total += value
+    end
+
+    emo_results_hash.each do |key, value|
+      if value > 0
+        emo_percent = ((value/total)* 100).round(1)
+      else
+        emo_percent = 0
+      end
+
+      emo_percents_hash[:key] = emo_percent
+    end
+
+    emo_percents_hash.sort_by do |key, value|
+      value
+    end.reverse
+
+    return emo_percents_hash
   end
 
 end

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   
   post '/upload' => 'users#upload_video'
 
-  get '/playlist/:playlist_category' => 'users#playlist', as: :playlist
+  get '/playlist' => 'users#playlist', as: :playlist
 
   # OmniAuth callback
   match '/auth/spotify/callback', to: 'sessions#create', via: [:get, :post]
