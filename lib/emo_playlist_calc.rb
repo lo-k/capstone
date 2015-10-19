@@ -10,7 +10,7 @@ class EmoPlaylistCalc
 
     case top_emotion
     
-    when "disgust", "contempt", "angry"
+    when "disgust", "contempt", "anger"
       category_options = ["rock", "hiphop", "metal"]
     when "surprise", "joy"
       category_options = ["party", "pop", "edm_dance", "workout", "travel"]

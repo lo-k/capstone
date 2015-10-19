@@ -6,7 +6,7 @@
     <h4>Upload your video selfie</h4>
     <p>(Video must be at least 10 seconds long)</p>
 
-    <%= form_tag upload_path do %>
+    <%= form_tag(upload_path, multipart: true) do %>
       <div class="form-group">
           <%= file_field_tag :video %>
 
