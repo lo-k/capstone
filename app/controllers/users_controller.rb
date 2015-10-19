@@ -11,7 +11,8 @@ class UsersController < ApplicationController
     # Need to temp store the video so it has a file path
     # Need to adapt this to handle other video file types
     upload = params[:video]
-    video = UploadIO.new(upload.tempfile, 'video/quicktime', upload.original_filename)
+    video = UploadIO.new(upload.tempfile, upload.content_type, upload.original_filename)
+    raise
     video_id = EmotientApi.new.upload_video(video)
 
     # kari_mixed_emotions
