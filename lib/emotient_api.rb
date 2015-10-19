@@ -1,6 +1,34 @@
 class EmotientApi
   EMO_URI = "https://api.emotient.com/v1/"
 
+  MIN_VID_SIZE = 8200000    # 7.8 MB -- Est size of ~10 sec video?
+  MAX_VID_SIZE = 31457280   # 30 MB -- Est size of ~25 sec video
+  
+  ACCEPTED_VID_FORMATS = 
+    [
+      "video/avi",          #.avi
+      "video/msvideo",      #.avi
+      "video/x-msvideo",    #.avi
+      "video/quicktime",    #.mov
+      "video/mp4",          #.mp4
+      "audio/mpeg",         #.mpg
+      "audio/x-ms-wmv",     #.wmv
+    ]
+
+  def validate_video(video)
+    status = "OK"
+
+    if ACCEPTED_VID_FORMATS.exclude?(video.content_type)
+      status = "video is not in the correct format"
+    elsif video.size < MIN_VID_SIZE
+      status = "video is too small"
+    elsif video.size > MAX_VID_SIZE
+      status = "video is too big"
+    end
+
+    return status
+  end
+
   def upload_video(video)
     response = HTTMultiParty.post(EMO_URI + "upload",
       :query => { :file => video },
