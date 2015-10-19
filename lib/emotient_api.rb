@@ -12,6 +12,16 @@ class EmotientApi
     return id
   end
 
+  def check_video_status(video_id)
+    response = HTTMultiParty.get(EMO_URI + "/media/" + video_id,
+      :headers => { 'Authorization' => ENV['EMOTIENT_KEY'] })
+
+    status = response.parsed_response["status"]
+    # status = "Analyzing"
+
+    return status
+  end
+
   def analyze_video(video_id)
     response = HTTMultiParty.get(EMO_URI + "analytics/" + video_id + 
       "/default/emotions?gender=combined&genderfilter=none&interval=summary&report=advanced",

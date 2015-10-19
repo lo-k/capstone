@@ -3,10 +3,21 @@
     <h3><%= flash[:error] %></h3>
   <% end %>
 
+  <div class="emotions">
+    <div id="disgust"><span><%= @disgust_percent %>%</span><h6 class="emo-tag">disgust</h6></div>
+    <div id="contempt"><span><%= @contempt_percent %>%</span><h6 class="emo-tag">contempt</h6></div>
+    <div id="surprise"><span><%= @surprise_percent %>%</span><h6 class="emo-tag">surprise</h6></div>
+    <div id="joy"><span><%= @joy_percent %>%</span><h6 class="emo-tag">joy</h6></div>
+    <div id="anger"><span><%= @anger_percent %>%</span><h6 class="emo-tag">anger</h6></div>
+    <div id="fear"><span><%= @fear_percent %>%</span><h6 class="emo-tag">fear</h6></div>
+    <div id="sadness"><span><%= @sadness_percent %>%</span><h6 class="emo-tag">sadness</h6></div>
+  </div>
+
   <h1>Check out your <span class="logo">music selfie</span></h1>
 
   <iframe src="https://embed.spotify.com/?uri=<%= @playlist_uri %>" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
 
+  <br>
   <div class="show-colors btn btn-default">Show Emotion Colors</div>
 
   <%= link_to "Upload Another Selfie", home_path , class: "btn btn-default" %>

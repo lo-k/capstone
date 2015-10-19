@@ -23,4 +23,5 @@ $(document).ready( function() {
     $('.track-title').hide();
     // $('.track-title').css('color', '#000');
   });
+
 })

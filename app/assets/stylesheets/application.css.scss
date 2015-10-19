@@ -169,6 +169,26 @@ input[type="file"] {
   text-align: center;
 }
 
+.emotions {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.emotions div {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.emotions div span {
+  padding-bottom: 0;
+}
+
+.emo-tag {
+  font-weight: 100;
+  padding: 0 10px;
+  display: inline-block;
+}
+
 .playlist-page h1 {
   font-weight: 100;
 }
