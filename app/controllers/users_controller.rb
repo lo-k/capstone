@@ -46,35 +46,43 @@ class UsersController < ApplicationController
   def playlist
     raise
     @playlist_uri = SpotifyApi.new.get_playlist(@playlist_category)
-    @emotions_percents_hash = calc_emo_percents(@emo_results)
+    @emotions_percents_hash = create_emo_percents_hash(@emo_results)
   end
 
 #########################################
   private
 
-  def calc_emo_percents(emo_results_hash)
-    emo_percents_hash = {}
-    total = 0
+  def create_emo_percents_hash(emo_results_hash)
+    total = calc_emo_total(emo_results_hash)
+    emo_percents_hash = calc_emo_percents(emo_results_hash, total)
 
-    emo_results_hash.each do |key, value|
-      total += value
-    end
-
-    emo_results_hash.each do |key, value|
-      if value > 0
-        emo_percent = ((value/total)* 100).round(1)
-      else
-        emo_percent = 0
-      end
-
-      emo_percents_hash[:key] = emo_percent
-    end
-
-    emo_percents_hash.sort_by do |key, value|
+    emo_percents_hash.sort_by do |emotion, value|
       value
     end.reverse
 
     return emo_percents_hash
+  end
+
+  def calc_emo_total(emo_results_hash)
+    total = 0
+
+    emo_results_hash.each do |emotion, value|
+      total += value
+    end
+
+    return total
+  end
+
+  def calc_emo_percents(emo_results_hash, total)
+    percents_hash = {}
+
+    emo_results_hash.each do |emotion, value|
+      emo_percent = value > 0 ? ((value/total)* 100).round(1) : 0
+
+      percents_hash[:emotion] = emo_percent
+    end
+
+    return percents_hash
   end
 
 end
