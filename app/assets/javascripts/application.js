@@ -16,8 +16,11 @@
 //= require_tree .
 //= require bootstrap-sprockets
 
+$(document).ready( function() {
 
-$(".show-colors").click(function() {
-  console.log('hello');
-  $('.track-title').css('color', 'red');
+  $(".show-colors").click(function() {
+    console.log('hello');
+    $('.track-title').hide();
+    // $('.track-title').css('color', '#000');
+  });
 })
