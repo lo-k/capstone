@@ -36,7 +36,11 @@ body {
   font-family: 'Raleway Dots', cursive;
 }
 
-h1 {
+// ***************************************
+// WELCOME PAGE
+// ***************************************
+
+.welcome-page h1 {
   font-size: 9em;
   color: #fff;
   text-align: center;
@@ -44,13 +48,13 @@ h1 {
   margin: 0;
 }
 
-.btn {
+.welcome-page .btn {
   border: 1px solid #fff;
   padding: 10px 20px;
   color: #fff;
 }
 
-.btn:hover {
+.welcome-page .btn:hover {
   color: #fff;
 }
 
@@ -67,7 +71,7 @@ h1 {
   font-weight: 100;
 }
 
-h3 {
+.welcome-page h3 {
   font-size: 5em;
   font-weight: 100;
   color: #fff;
@@ -84,7 +88,7 @@ h3 {
   padding-left: 60px;
 }
 
-h5 {
+.welcome-page h5 {
   font-weight: 100;
   font-size: 1em;
   color: #fff;
@@ -121,3 +125,29 @@ hr {
   height: 600px;
 }
 
+// ***************************************
+// UPLOAD PAGE
+// ***************************************
+
+.upload-page {
+  margin: 0 auto;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.upload-box {
+  margin: 50px auto;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 30px;
+  width: 30%;  
+}
+
+input[type="file"] {
+  margin: 30px auto;
+}
+
+.upload-hr {
+  width: 30%;
+  margin-top: 80px;
+}

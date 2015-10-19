@@ -1,23 +1,25 @@
-<div class="selfie-hero bcg">
-  <% if !flash.empty? %>
-    <p><%= flash[:error] %><p>
-  <% end %>
+<div class="welcome-page">
+  <div class="selfie-hero bcg">
+    <% if !flash.empty? %>
+      <p><%= flash[:error] %></p>
+    <% end %>
 
-  <h1 class="logo">music selfie</h1>
-  
-  <%= link_to '/auth/spotify', class: "btn sign-in" do %>
-    <h4>Sign In With</h4><%= image_tag('spotify_logo.png') %>
-  <% end %>
-</div>
+    <h1 class="logo">music selfie</h1>
+    
+    <%= link_to '/auth/spotify', class: "btn sign-in" do %>
+      <h4>Sign In With</h4><%= image_tag('spotify_logo.png') %>
+    <% end %>
+  </div>
 
-<div class="selfie-video bcg">
-  <h3 id="turn-video-text">Turn a video...</h3> 
-</div>
+  <div class="selfie-video bcg">
+    <h3 id="turn-video-text">Turn a video...</h3> 
+  </div>
 
-<div class="selfie-music bcg">
-  <h3 id="into-music-text">into music</h3>
-  <hr>
-  <h5> Contact | FAQs | 2015 </h5>
+  <div class="selfie-music bcg">
+    <h3 id="into-music-text">into music</h3>
+    <hr>
+    <h5> Contact | FAQs | 2015 </h5>
+  </div>
 </div>
 
 
