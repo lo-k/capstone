@@ -1,9 +1,9 @@
 # Do I need to require gems here?
 
 # Requiring in my Emotient API file
-require 'emotient_api'
-require 'emo_playlist_calc'
-require 'spotify_api'
+# require 'emotient_api'
+# require 'emo_playlist_calc'
+# require 'spotify_api'
 
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
