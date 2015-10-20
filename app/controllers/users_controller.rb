@@ -2,7 +2,6 @@ class UsersController < ApplicationController
 
   def home
     @user = User.find(session[:user_id])
-
     @greeting = Time.now.hour < 12 ? "morning" : "evening"
 
   end
@@ -29,23 +28,20 @@ class UsersController < ApplicationController
       end
 
       if video_status == "Analysis Complete"
-        @emo_results = EmotientApi.new.analyze_video(video_id)
-        @playlist_category = EmoPlaylistCalc.new.select_playlist_category(@emo_results)
+        emo_results = EmotientApi.new.analyze_video(video_id)
+        playlist_category = EmoPlaylistCalc.new.select_playlist_category(emo_results)
       else 
         flash[:error] = "There was an error with your video. Please try again."
       end
+      
+      @playlist_uri = SpotifyApi.new.get_playlist(playlist_category)
+      @emotions_percents_hash = create_emo_percents_hash(emo_results)
 
-      redirect_to playlist_path
     else
       flash[:error] = upload_validation_status
-
-      redirect_to home_path
     end
-  end
 
-  def playlist
-    @playlist_uri = SpotifyApi.new.get_playlist(@playlist_category)
-    @emotions_percents_hash = create_emo_percents_hash(@emo_results)
+    render 'playlist'
   end
 
 #########################################
@@ -55,11 +51,11 @@ class UsersController < ApplicationController
     total = calc_emo_total(emo_results_hash)
     emo_percents_hash = calc_emo_percents(emo_results_hash, total)
 
-    emo_percents_hash.sort_by do |emotion, value|
+    sorted_hash = emo_percents_hash.sort_by do |emotion, value|
       value
     end.reverse
 
-    return emo_percents_hash
+    return sorted_hash
   end
 
   def calc_emo_total(emo_results_hash)
@@ -78,7 +74,7 @@ class UsersController < ApplicationController
     emo_results_hash.each do |emotion, value|
       emo_percent = value > 0 ? ((value/total)* 100).round(1) : 0
 
-      percents_hash[:emotion] = emo_percent
+      percents_hash[emotion.to_sym] = emo_percent
     end
 
     return percents_hash

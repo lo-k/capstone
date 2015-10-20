@@ -3,18 +3,9 @@
     <h3><%= flash[:error] %></h3>
   <% end %>
 
-<!--   <div class="emotions">
-    <div id="disgust"><span><%= @disgust_percent %>%</span><h6 class="emo-tag">disgust</h6></div>
-    <div id="contempt"><span><%= @contempt_percent %>%</span><h6 class="emo-tag">contempt</h6></div>
-    <div id="surprise"><span><%= @surprise_percent %>%</span><h6 class="emo-tag">surprise</h6></div>
-    <div id="joy"><span><%= @joy_percent %>%</span><h6 class="emo-tag">joy</h6></div>
-    <div id="anger"><span><%= @anger_percent %>%</span><h6 class="emo-tag">anger</h6></div>
-    <div id="fear"><span><%= @fear_percent %>%</span><h6 class="emo-tag">fear</h6></div>
-    <div id="sadness"><span><%= @sadness_percent %>%</span><h6 class="emo-tag">sadness</h6></div>
-  </div> -->
   <div class="emotions">
-    <%= @emotions_percents_hash.each do |emotion, percent| %>
-      <div id="<%= emotion %>"><span><%= percent %></span><h6 class="emo-tag"><%= emotion %></h6></div>
+    <% @emotions_percents_hash.each do |emotion, percent| %>
+      <div id="<%= emotion %>"><span><%= percent %>%</span><h6 class="emo-tag"><%= emotion %></h6></div>
     <% end %>
   </div>
 
