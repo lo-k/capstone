@@ -18,12 +18,6 @@
 
 $(document).ready( function() {
 
-  // $(".show-colors").click(function() {
-  //   console.log('hello');
-  //   $('.track-title').hide();
-  //   // $('.track-title').css('color', '#000');
-  // });
-
   var accepted_vid_formats = 
     [
       "video/avi",          // .avi
