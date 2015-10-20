@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
-  get '/home' => 'users#home'
+  get '/selfie' => 'users#home'
   
   post '/playlist' => 'users#upload_video'
 

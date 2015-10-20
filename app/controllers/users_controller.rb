@@ -15,10 +15,10 @@ class UsersController < ApplicationController
       # video_id = EmotientApi.new.upload_video(video)
 
       # kari_mixed_emotions
-      video_id = "cf82beda-9600-8be9-cc04-414802410442"
+      # video_id = "cf82beda-9600-8be9-cc04-414802410442"
 
       # q video
-      # video_id = "d2f06aa9-b449-306f-f91c-e6bc02e104ec"
+      video_id = "d2f06aa9-b449-306f-f91c-e6bc02e104ec"
 
       video_status = EmotientApi.new.check_video_status(video_id)
 

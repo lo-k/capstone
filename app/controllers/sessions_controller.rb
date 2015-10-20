@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     @user = User.find_or_create_from_omniauth(auth_hash)
     session[:user_id] = @user.id
 
-    redirect_to home_path
+    redirect_to selfie_path
   end
 
   def oauth_failure

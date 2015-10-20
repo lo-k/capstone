@@ -1,28 +1,25 @@
-<% if action_name == "home" %>
+<div class="upload-page">
+  <h2>Good <%= @greeting %>, <%= image_tag "spotify_icon.png" %><%= @user.name %>!</h2>
+  <h4>Let's find you something to listen to.</h4>
 
-  <div class="upload-page">
-    <h2>Good <%= @greeting %>, <%= image_tag "spotify_icon.png" %><%= @user.name %>!</h2>
-    <h4>Let's find you something to listen to.</h4>
+  <div class="upload-box">
+    <h4>Upload your video selfie</h4>
+    <p>Accepted file formats: AVI, MOV, MP4, MPG, WMV</p>
+    <p>(Video must be between 10-20 seconds long)</p>
 
-    <div class="upload-box">
-      <h4>Upload your video selfie</h4>
-      <p>Accepted file formats: AVI, MOV, MP4, MPG, WMV</p>
-      <p>(Video must be between 10-20 seconds long)</p>
+    <%= form_tag(playlist_path, multipart: true) do %>
+      <div class="form-group">
+          <%= file_field_tag :video %>
 
-      <%= form_tag(playlist_path, multipart: true) do %>
-        <div class="form-group">
-            <%= file_field_tag :video %>
+          <%= submit_tag 'Upload', class: "btn btn-default" %>
+        </div>
+    <% end %>
 
-            <%= submit_tag 'Upload', class: "btn btn-default" %>
-          </div>
-      <% end %>
-
-      <%= link_to "Dev Test Button", playlist_path, method: "post" %>
-      <br>
-      <%= link_to "Not you? Sign out", signout_path %>
-    </div>
-    <hr class="upload-hr">
-    <h3 class="logo">music selfie</h3>
+    <%= link_to "Dev Test Button", playlist_path, method: "post" %>
+    <br>
+    <%= link_to "Not you? Sign out", signout_path %>
   </div>
+  <hr class="upload-hr">
+  <h3 class="logo">music selfie</h3>
+</div>
 
-<% end %>
