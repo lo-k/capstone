@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def upload_video
     upload = params[:video]
     upload_validation_status = EmotientApi.new.validate_video(upload)
-    
+
     if upload_validation_status == "OK"
       # video = UploadIO.new(upload.tempfile, upload.content_type, upload.original_filename)
       # video_id = EmotientApi.new.upload_video(video)
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
       @emotions_percents_hash = create_emo_percents_hash(emo_results)
 
     else
-      flash[:error] = upload_validation_status
+      flash[:error] = upload_validation_status | "Please try again."
     end
 
     render 'playlist'
