@@ -16,5 +16,7 @@
   <br>
   <div class="show-colors btn btn-default">Show Emotion Colors</div>
 
-  <%= link_to "Upload Another Selfie", selfie_path , class: "btn btn-default" %>
+  <%= link_to selfie_path , class: "btn upload-again" do %>
+    <h4>Upload Another Selfie</h4>
+  <% end %>
 </div>

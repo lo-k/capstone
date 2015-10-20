@@ -163,6 +163,7 @@ input[type="file"] {
 // ***************************************
 
 .playlist-page {
+  background-image: url('headphones.jpg');
   margin: 0 auto;
   padding-top: 50px;
   padding-bottom: 30px;
@@ -172,6 +173,7 @@ input[type="file"] {
 .emotions {
   margin: 0 auto;
   text-align: center;
+  color: #fff;
 }
 
 .emotions div {
@@ -190,22 +192,41 @@ input[type="file"] {
 }
 
 .playlist-page h1 {
+  color: #fff;
   font-weight: 100;
 }
 
 .playlist-page span {
+  color: #fff;
   font-size: 1.7em;
   display: block;
   padding: 20px;
 }
 
-.playlist-page a {
-  width: 15%;
-  display: block;
-  margin: 20px auto;
-}
-
 .track-title {
   color: red;
+}
+
+.playlist-page .btn {
+  border: 1px solid #fff;
+  padding: 10px 20px;
+  color: #fff;
+}
+
+.playlist-page .btn:hover {
+  color: #fff;
+}
+
+.upload-again {
+  display: block;
+  margin: 0 auto;
+  width: 20%;
+  margin-top: 20px;
+}
+
+.upload-again h4 {
+  display: inline-block;
+  font-size: 1em;
+  font-weight: 100;
 }
 
