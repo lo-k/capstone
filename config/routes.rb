@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get '/selfie' => 'users#home'
-  
+  get '/playlist' => 'users#home_redirect' #(auto redirect because you must POST to access a playlist)
+
   post '/playlist' => 'users#upload_video'
 
   # OmniAuth callback

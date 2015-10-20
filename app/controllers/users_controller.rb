@@ -3,7 +3,10 @@ class UsersController < ApplicationController
   def home
     @user = User.find(session[:user_id])
     @greeting = Time.now.hour < 12 ? "morning" : "evening"
+  end
 
+  def home_redirect
+    redirect_to selfie_path
   end
 
   def upload_video
