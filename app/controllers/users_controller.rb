@@ -44,7 +44,6 @@ class UsersController < ApplicationController
   end
 
   def playlist
-    raise
     @playlist_uri = SpotifyApi.new.get_playlist(@playlist_category)
     @emotions_percents_hash = create_emo_percents_hash(@emo_results)
   end
