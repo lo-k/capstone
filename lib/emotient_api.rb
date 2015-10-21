@@ -15,7 +15,7 @@ class EmotientApi
       "audio/x-ms-wmv",     #.wmv
     ]
 
-  def validate_video(video)
+  def self.validate_video(video)
     status = "OK"
 
     if ACCEPTED_VID_FORMATS.exclude?(video.content_type)
@@ -29,7 +29,7 @@ class EmotientApi
     return status
   end
 
-  def upload_video(video)
+  def self.upload_video(video)
     response = HTTMultiParty.post(EMO_URI + "upload",
       :query => { :file => video },
       :headers => { 'Authorization' => ENV['EMOTIENT_KEY'] , 
@@ -40,7 +40,7 @@ class EmotientApi
     return id
   end
 
-  def check_video_status(video_id)
+  def self.check_video_status(video_id)
     response = HTTMultiParty.get(EMO_URI + "/media/" + video_id,
       :headers => { 'Authorization' => ENV['EMOTIENT_KEY'] })
 
@@ -50,7 +50,7 @@ class EmotientApi
     return status
   end
 
-  def analyze_video(video_id)
+  def self.analyze_video(video_id)
     response = HTTMultiParty.get(EMO_URI + "analytics/" + video_id + 
       "/default/emotions?gender=combined&genderfilter=none&interval=summary&report=advanced",
       :headers => { 'Authorization' => ENV['EMOTIENT_KEY'] })

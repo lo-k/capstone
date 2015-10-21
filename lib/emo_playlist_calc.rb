@@ -1,6 +1,6 @@
 class EmoPlaylistCalc
 
-  def select_playlist_category(emotions_hash)
+  def self.select_playlist_category(emotions_hash)
       
     top_emotion_and_score = emotions_hash.max_by do |key , value|
       value
