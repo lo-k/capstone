@@ -30,22 +30,21 @@ APIs
       - Returns a list of 'station_ids' that are tagged with that mood
       - Can query for that [station](http://songza.com/api/1/station/1399111)
         - Results include a url which will play that playlist on songza's website... not able to embedd the player
-      - Cannot get songs by playlist through their API
-      - Response in json  
+      - Cannot get songs by playlist through their API... so can't use this
   - [lastfm.com](http://www.last.fm/api/rest)
     - Can query songs by tags (tags include several mood terms)
     - Response in either json or XML
     - NOT ACCEPTING NEW API ACCOUNTS (issue opened at least +1 month ago)... whomp
   - [musicbrainz.com](https://musicbrainz.org/doc/Developer_Resources)
-
+    - After playing around with it -- the songs it suggests are really bad... not going to use this one
+  - [Spotify](https://developer.spotify.com/web-api/get-categorys-playlists/)
+    - Can query by 'categories', which you could conceivably match to moods-ish
+    - Can pull song titles off of categories
 ---
 ####Tools/Tech To Be Used
-User-Facing App
-  - Ionic framework (to make it a hybrid mobile app)
-  - OAuth signin with Spotify
-  - Angular?/React?
-  - Possibly a small Sinatra server (v2)
 
-Server-Side API App  
   - Ruby on Rails
-  - Postgres
+  - OAuth signin with Spotify
+  - Emotient API video processing
+  - Spotify API music querying and playlist embedding
+  - Postgres (possibly, if I decide to save data...)
