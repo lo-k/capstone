@@ -40,6 +40,7 @@ APIs
   - [Spotify](https://developer.spotify.com/web-api/get-categorys-playlists/)
     - Can query by 'categories', which you could conceivably match to moods-ish
     - Can pull song titles off of categories
+    
 ---
 ####Tools/Tech To Be Used
 
