@@ -51,12 +51,14 @@ $(document).ready( function() {
         console.log('wrong file type');
         console.log(file_type);
         $('.submit-upload').attr('disabled', 'disabled');
+        $('.error-message').html('Incorrect file type');
       
       // if the file is not the correct size
       } else if (file_size < min_size || file_size > max_size) {
         console.log('wrong file size');
         console.log(file_size)
         $('.submit-upload').attr('disabled', 'disabled');
+        $('.error-message').html('Incorrect file size');
       
       // file is ok for upload
       } else {
@@ -64,6 +66,7 @@ $(document).ready( function() {
         console.log(file_type);
         console.log(file_size);
         $('.submit-upload').removeAttr('disabled'); 
+        $('.error-message').html('');
       }
 
   });
