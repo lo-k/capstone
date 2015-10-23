@@ -20,10 +20,10 @@ class EmotientApi
 
     if ACCEPTED_VID_FORMATS.exclude?(video.content_type)
       status = "video is not in the correct format"
-    elsif video.size < MIN_VID_SIZE
-      status = "video is too small"
-    elsif video.size > MAX_VID_SIZE
-      status = "video is too big"
+    # elsif video.size < MIN_VID_SIZE
+    #   status = "video is too small"
+    # elsif video.size > MAX_VID_SIZE
+    #   status = "video is too big"
     end
 
     return status
