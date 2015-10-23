@@ -2,10 +2,20 @@
   <h2>Good <%= @greeting %>, <%= image_tag "spotify_icon.png" %><%= @user.name %>!</h2>
   <h4>Let's find you something to listen to.</h4>
 
-  
+  <div class="submit-choices">
+    <div id="video-upload" class="video-choice btn">
+      <span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
+      <h4>Upload a Video</h4>
+    </div>
+    <div id="video-capture" class="video-choice btn">
+      <span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span>
+      <h4>Take a Video</h4>
+    </div>
+  </div>
+
   <div class="upload-box">
-    <h4>Upload your video selfie</h4>
     <p class="error-message"></p>
+
     <p>Accepted file formats: AVI, MOV, MP4, MPG, WMV</p>
     <p>(Video must be between 10-20 seconds long)</p>
 
@@ -16,8 +26,6 @@
           <%= submit_tag 'Upload', class: "btn btn-default submit-upload", disabled: "disabled" %>
         </div>
     <% end %>
-
-    <%= link_to "Dev Test Button", playlist_path, method: "post" %>
     <br>
     <%= link_to "Not you? Sign out", signout_path %>
   </div>
@@ -25,3 +33,14 @@
   <h3 class="logo">music selfie</h3>
 </div>
 
+<!-- - - - - - - - - - - - - - - - - - - - - -->
+
+    <div id='players'>
+      <video class='recorder' autoplay controls="controls" ></video>
+    </div>
+    <!-- Control buttons -->
+    <button id="record-video">RECORD VIDEO</button>
+    <button id='record_button'>Start recording</button>
+    <button id='play_button'>Play</button>
+    <button id='upload_button'>Upload</button>
+    <button id='turn-off'>Turn off camera</button>

@@ -137,11 +137,12 @@ hr {
   text-align: center;
 }
 
-.upload-box {
-  margin: 50px auto;
-  // border: 1px solid #000;
-  // border-radius: 10px;
+.submit-choices {
   padding: 30px;
+}
+
+.upload-box {
+  margin: 0px auto;
   width: 30%;  
 }
 
@@ -161,6 +162,10 @@ input[type="file"] {
 .error-message {
   color: red;
   font-weight: 400;
+}
+
+.glyphicon {
+  font-size: 3em;
 }
 
 // ***************************************
