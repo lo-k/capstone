@@ -147,7 +147,10 @@ hr {
 }
 
 input[type="file"] {
-  margin: 30px auto;
+  // margin: 30px auto;
+  visibility: hidden;
+  width: 0;
+  height: 0;
 }
 
 .upload-hr {

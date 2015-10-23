@@ -18,6 +18,8 @@
 
 $(document).ready( function() {
 
+  $('.submit-upload').hide();
+
   var accepted_vid_formats = 
     [
       "video/avi",          // .avi
@@ -29,12 +31,16 @@ $(document).ready( function() {
       "audio/x-ms-wmv",     // .wmv
     ]
 
-  // Upload Video Button Triggers Input Select
+  // ---------------------- UPLOADING A VIDEO ----------------------
 
+  // "Upload Video" Button Triggers Input Select
+  
   $('#video-upload').click(function() {
     var fileInput = $('input:file');
     fileInput.click();
   });
+
+  // File Input Validations
 
   $('input:file').change(function() {
 
@@ -47,11 +53,11 @@ $(document).ready( function() {
       var file_type = $('input[type="file"]')[0].files[0].type
       var file_size = $('input[type="file"]')[0].files[0].size
       var max_size = 31457280
-      var min_size = 8200000
 
       // if no file is selected
       if (empty) {
         $('.submit-upload').attr('disabled', 'disabled'); 
+        $('.submit-upload').hide();
 
       // if the file is not the correct format
       } else if ($.inArray(file_type, accepted_vid_formats) < 0) {
@@ -59,20 +65,22 @@ $(document).ready( function() {
         console.log(file_type);
         $('.submit-upload').attr('disabled', 'disabled');
         $('.error-message').html('Incorrect file type');
+        $('.submit-upload').hide();
       
       // if the file is not the correct size
-      // } else if (file_size < min_size || file_size > max_size) {
-      //   console.log('wrong file size');
-      //   console.log(file_size)
-      //   $('.submit-upload').attr('disabled', 'disabled');
-      //   $('.error-message').html('Incorrect file size');
-      
+      } else if (file_size > max_size) {
+        console.log('file too large');
+        console.log(file_size)
+        $('.submit-upload').attr('disabled', 'disabled');
+        $('.error-message').html('File too large');
+  
       // file is ok for upload
       } else {
         console.log('file okay');
         console.log(file_type);
         console.log(file_size);
-        $('.submit-upload').removeAttr('disabled'); 
+        $('.submit-upload').removeAttr('disabled');
+        $('.submit-upload').show(); 
         $('.error-message').html('');
       }
 
