@@ -147,7 +147,6 @@ hr {
 }
 
 input[type="file"] {
-  // margin: 30px auto;
   visibility: hidden;
   width: 0;
   height: 0;
@@ -235,6 +234,12 @@ input[type="file"] {
   margin: 0 auto;
   width: 20%;
   margin-top: 20px;
+}
+
+.upload-again .glyphicon-equalizer {
+  display: inline-block;
+  padding: 0px;
+  padding-right: 10px;
 }
 
 .upload-again h4 {
