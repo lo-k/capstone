@@ -19,6 +19,7 @@
 $(document).ready( function() {
 
   $('.submit-upload').hide();
+  $("video.recorder").hide();
 
   var accepted_vid_formats = 
     [
@@ -31,10 +32,10 @@ $(document).ready( function() {
       "audio/x-ms-wmv",     // .wmv
     ]
 
-  // ---------------------- UPLOADING A VIDEO ----------------------
+// ---------------------- UPLOADING A VIDEO ----------------------
 
   // "Upload Video" Button Triggers Input Select
-  
+
   $('#video-upload').click(function() {
     var fileInput = $('input:file');
     fileInput.click();
@@ -86,7 +87,7 @@ $(document).ready( function() {
 
   });
 
-  // ---------------------- WEBCAM VIDEO ----------------------
+// ---------------------- WEBCAM VIDEO ----------------------
 
   // config
   var videoWidth = 640;
@@ -209,9 +210,10 @@ $(document).ready( function() {
     playing = true;
   }
 
-  $('#record-video').click(function() {
+// Event Handlers ----------------------------------
+
+  $('#video-capture').click(function() {
     $('video.recorder').show();
-    recordVideo();
   })
 
   // handle playback
