@@ -20,6 +20,7 @@ $(document).ready( function() {
 
   $('.submit-upload').hide();
   $("video.recorder").hide();
+  $('.video-control-buttons').hide();
 
   var accepted_vid_formats = 
     [
@@ -90,8 +91,8 @@ $(document).ready( function() {
 // ---------------------- WEBCAM VIDEO ----------------------
 
   // config
-  var videoWidth = 640;
-  var videoHeight = 480;
+  var videoWidth = 440;
+  var videoHeight = 280;
 
   // setup
   var stream;
@@ -113,8 +114,7 @@ $(document).ready( function() {
     }
   };
 
-  // record the video
-  var recordVideo = function() { 
+  var setUpVideo = function() { 
     navigator.getUserMedia({audio: false, video: { mandatory: {}, optional: []}}, function(pStream) {
 
       stream = pStream;
@@ -129,26 +129,24 @@ $(document).ready( function() {
       video_recorder = RecordRTC(stream, videoOptions);
 
       // update UI
-      $("#record_button").show();
+      $("video.recorder").show();
+      $('.video-control-buttons').show();
     }, function(){})
   };
 
-  // start recording
   var startRecording = function() {
     video_recorder.startRecording();
 
     // update the UI
-    $("#play_button").hide();
-    $("#upload_button").hide();
-    $("video.recorder").show();
+    $("#play-button").hide();
+    $("#upload-button").hide();
     $("#video-player").remove();
-    $("#record_button").text("Stop recording");
+    $("#record-button").children('h4').text("Stop recording");
 
     // toggle boolean
     recording = true;
   }
 
-  // stop recording
   var stopRecording = function() {
     video_recorder.stopRecording();
 
@@ -162,20 +160,52 @@ $(document).ready( function() {
     video_player.id = "video-player";
     video_player.src = URL.createObjectURL(video_blob);
     video_player.controls = "controls";
-    $("#players").append(video_player);
+    $("#player").append(video_player);
 
     // update UI
     $("video.recorder").hide();
-    $("#play_button").show();
-    $("#upload_button").show();
-    $("#record_button").text("Start recording");
+    $("#play-button").show();
+    $("#upload-button").show();
+    $("#record-button").text("Start recording");
 
     // toggle boolean
     recording = false;
   }
 
-  // handle recording
-  $("#record_button").click(function(){
+  var startPlayback = function() {
+    video = $("#video-player")[0];
+    video.play();
+    $("#video-player").bind("ended", stopPlayback);
+
+    // Update UI
+    $("#play-button").text("Stop");
+
+    // toggle boolean
+    playing = true;
+  }
+
+  var stopPlayback = function() {
+    video = $("#video-player")[0];
+    video.pause();
+    video.currentTime = 0;
+
+    // update ui
+    $("#play-button").text("Play");
+
+    // toggle boolean
+    playing = false;
+  }
+
+
+// Event Handlers ----------------------------------
+
+  // Set up video stream
+  $('#video-capture').click(function() {
+    setUpVideo();
+  });
+
+  // Start/Stop recording
+  $('#record-button').click(function() {
     if (recording) {
       stopRecording();
     } else {
@@ -183,41 +213,8 @@ $(document).ready( function() {
     }
   });
 
-  // stop playback
-  var stopPlayback = function() {
-    // controlling
-    video = $("#video-player")[0];
-    video.pause();
-    video.currentTime = 0;
-
-    // update ui
-    $("#play_button").text("Play");
-
-    // toggle boolean
-    playing = false;
-  }
-
-  // start playback
-  var startPlayback = function() {
-    video = $("#video-player")[0];
-    video.play();
-    $("#video-player").bind("ended", stopPlayback);
-
-    // Update UI
-    $("#play_button").text("Stop");
-
-    // toggle boolean
-    playing = true;
-  }
-
-// Event Handlers ----------------------------------
-
-  $('#video-capture').click(function() {
-    $('video.recorder').show();
-  })
-
-  // handle playback
-  $("#play_button").click(function(){
+  // Play back recorded video
+  $("#play-button").click(function(){
     if (playing) {
       stopPlayback();
     } else {
@@ -225,8 +222,8 @@ $(document).ready( function() {
     }
   });
 
-  // Upload button
-  $("#upload_button").click(function(){
+  // Upload video
+  $("#upload-button").click(function(){
     var request = new XMLHttpRequest();
 
     request.onreadystatechange = function () {
@@ -239,9 +236,8 @@ $(document).ready( function() {
     request.send(formData);
   });
 
+  // Turn off camera (resets everything also)
   $('#turn-off').click(function() {
     stream.stop();
   })
-
-
 })
