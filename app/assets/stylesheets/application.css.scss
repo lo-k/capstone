@@ -111,17 +111,20 @@ hr {
 }
 
 .selfie-hero {
-  background-image: url("selfie.jpg");
+  // background-image: url("selfie.jpg");
+  background-image: url(image-path('selfie.jpg'));
   height: 900px;
 }
 
 .selfie-video {
-  background-image: url("selfie-video.jpg");
+  // background-image: url("selfie-video.jpg");
+  background-image: url(image-path('selfie-video.jpg'));
   height: 600px;
 }
 
 .selfie-music {
-  background-image: url("selfie-music.jpg");
+  // background-image: url("selfie-music.jpg");
+  background-image: url(image-path('selfie-music.jpg'));
   height: 600px;
 }
 
@@ -130,7 +133,8 @@ hr {
 // ***************************************
 
 .upload-page {
-  background-image: url('faded-nature.jpg');
+  // background-image: url('faded-nature.jpg');
+  background-image: url(image-path('faded-nature.jpg'));
   margin: 0 auto;
   padding-top: 100px;
   padding-bottom: 30px;
@@ -175,7 +179,8 @@ input[type="file"] {
 // ***************************************
 
 .playlist-page {
-  background-image: url('headphones.jpg');
+  // background-image: url('headphones.jpg');
+  background-image: url(image-path('headphones.jpg'));
   margin: 0 auto;
   padding-top: 50px;
   padding-bottom: 30px;
