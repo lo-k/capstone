@@ -27,9 +27,11 @@ html {
 }
 
 body {
+  background-image: url(image-path('blk-texture.jpg'));
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
   margin: 0 auto;
+  color: #fff;
 }
 
 .logo {
@@ -41,10 +43,9 @@ body {
 // ***************************************
 
 .welcome-page h1 {
-  font-size: 9em;
-  color: #fff;
+  font-size: 6em;
   text-align: center;
-  padding-top: 200px;
+  padding-top: 100px;
   margin: 0;
 }
 
@@ -61,225 +62,25 @@ body {
 .sign-in {
   display: block;
   margin: 0 auto;
-  width: 20%;
-  margin-top: 250px;
+  width: 80%;
+  margin-top: 30px;
 }
 
 .sign-in h4 {
   display: inline-block;
-  font-size: 1em;
+  font-size: 1.2em;
+  vertical-align: bottom;
   font-weight: 100;
-}
-
-.welcome-page h3 {
-  font-size: 5em;
-  font-weight: 100;
-  color: #fff;
-  margin: 0;
-}
-
-#turn-video-text {
-  padding-top: 60px;
-  padding-left: 700px;
-}
-
-#into-music-text {
-  padding-top: 60px;
-  padding-left: 60px;
-}
-
-.welcome-page h5 {
-  font-weight: 100;
-  font-size: 1em;
-  color: #fff;
-  text-align: center;
-}
-
-hr {
-  margin-top: 400px;
-  width: 50%;
-}
-
-
-.bcg {
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  width: 100%;
-}
-
-.selfie-hero {
-  // background-image: url("selfie.jpg");
-  background-image: url(image-path('selfie.jpg'));
-  height: 900px;
-}
-
-.selfie-video {
-  // background-image: url("selfie-video.jpg");
-  background-image: url(image-path('selfie-video.jpg'));
-  height: 600px;
-}
-
-.selfie-music {
-  // background-image: url("selfie-music.jpg");
-  background-image: url(image-path('selfie-music.jpg'));
-  height: 600px;
 }
 
 // ***************************************
 // UPLOAD PAGE
 // ***************************************
 
-.upload-page {
-  // background-image: url('faded-nature.jpg');
-  background-image: url(image-path('faded-nature.jpg'));
-  margin: 0 auto;
-  padding-top: 100px;
-  padding-bottom: 30px;
-  text-align: center;
-}
 
-.submit-choices {
-  padding: 30px;
-}
-
-.upload-box {
-  margin: 0px auto;
-  width: 30%;  
-}
-
-input[type="file"] {
-  visibility: hidden;
-  width: 0;
-  height: 0;
-}
-
-.upload-hr {
-  width: 30%;
-  margin-top: 80px;
-}
-
-.upload-page h3 {
-  color: #fff;
-}
-
-.error-message {
-  color: red;
-  font-weight: 400;
-}
-
-.glyphicon {
-  font-size: 3em;
-}
-
-// Video Buttons
-
-#record-button {
-  color: green;
-  border-color: green;
-  border: 2px solid;
-  border-radius: 100%;
-  padding: 25px;
-}
-
-#stop-recording-button {
-  color: red;
-  border-color: red;
-  border: 2px solid;
-  border-radius: 100%;
-  padding: 25px;
-}
-
-#upload-button {
-  color: purple;
-  border-color: purple;
-  border: 2px solid;
-  border-radius: 100%;
-  padding: 25px;
-}
-
-#cancel-button {
-  display: block;
-}
 
 // ***************************************
 // PLAYLIST PAGE
 // ***************************************
 
-.playlist-page {
-  // background-image: url('headphones.jpg');
-  background-image: url(image-path('headphones.jpg'));
-  margin: 0 auto;
-  padding-top: 50px;
-  padding-bottom: 30px;
-  text-align: center;
-}
-
-.emotions {
-  margin: 0 auto;
-  text-align: center;
-  color: #fff;
-}
-
-.emotions div {
-  display: inline-block;
-  margin: 0 auto;
-}
-
-.emotions div span {
-  padding-bottom: 0;
-}
-
-.emo-tag {
-  font-weight: 100;
-  padding: 0 10px;
-  display: inline-block;
-}
-
-.playlist-page h1 {
-  color: #fff;
-  font-weight: 100;
-}
-
-.playlist-page span {
-  color: #fff;
-  font-size: 1.7em;
-  display: block;
-  padding: 20px;
-}
-
-.track-title {
-  color: red;
-}
-
-.playlist-page .btn {
-  border: 1px solid #fff;
-  padding: 10px 20px;
-  color: #fff;
-}
-
-.playlist-page .btn:hover {
-  color: #fff;
-}
-
-.upload-again {
-  display: block;
-  margin: 0 auto;
-  width: 20%;
-  margin-top: 20px;
-}
-
-.upload-again .glyphicon-equalizer {
-  display: inline-block;
-  padding: 0px;
-  padding-right: 10px;
-}
-
-.upload-again h4 {
-  display: inline-block;
-  font-size: 1em;
-  font-weight: 100;
-}
 
