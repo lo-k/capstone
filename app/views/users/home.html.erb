@@ -16,7 +16,7 @@
   <div class="upload-box">
     <p class="error-message"></p>
 
-    <p>Accepted file formats: AVI, MOV, MP4, MPG, WMV</p>
+    <p>Accepted file formats: AVI, MOV, MP4, MPG, WMV, WEBM</p>
     <p>(Video must be between 10-20 seconds long)</p>
 
     <%= form_tag(playlist_path, multipart: true) do %>
@@ -30,13 +30,13 @@
 
   <div class="record-box">
     <div id='player'>
-      <video class='recorder' autoplay controls="controls" ></video>
+      <video class='recorder' autoplay ></video>
     </div>
     <div class="video-control-buttons">
-      <div id='record-button' class="btn"><span class="glyphicon glyphicon-record" aria-hidden="true"></span><h4>Record</h4></div>
-      <div id='play-button' class="btn"><span class="glyphicon glyphicon-play" aria-hidden="true"></span><h4>Play</h4></div>
-      <div id='upload-button' class="btn"><span class="glyphicon glyphicon-" aria-hidden="true"></span>Upload</div>
-      <div id='turn-off-button' class="btn"><span class="glyphicon glyphicon-off" aria-hidden="true"></span><h4>Turn off camera</h4></div>
+      <div id='record-button' class="btn vid-btn"><h4>start</h4></div>
+      <div id='stop-recording-button' class="btn vid-btn"><h4>stop</h4></div>
+      <div id='upload-button' class="btn vid-btn"><h4>upload</h4></div>
+      <div id='cancel-button' class="btn">Cancel</div>
     </div>
   </div>
 
