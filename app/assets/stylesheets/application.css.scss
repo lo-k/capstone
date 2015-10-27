@@ -27,11 +27,19 @@ html {
 }
 
 body {
-  background-image: url(image-path('blk-texture.jpg'));
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
   margin: 0 auto;
   color: #fff;
+}
+
+.bcg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -5000;
 }
 
 .logo {
@@ -79,8 +87,43 @@ body {
 
 
 
+
+
 // ***************************************
 // PLAYLIST PAGE
 // ***************************************
 
+
+// ***************************************
+// MEDIA QUERIES
+// ***************************************
+
+/*XL screen */
+@media screen and (min-width: 1024px) {
+
+}
+
+/*iPad horizontal*/
+@media screen and (max-width: 1024px) {
+
+}
+
+/*iPad vertical*/
+@media screen and (min-width: 768px) {
+
+  .welcome-page h1 {
+    padding-top: 200px;
+  }
+
+  .sign-in {
+    width: 70%;
+    margin-top: 40px;
+  }
+
+}
+
+/*iPhone horizontal ?????? */
+// @media screen and (max-width: 768px) {
+
+// }
 
