@@ -25,10 +25,10 @@ $(document).ready( function() {
   // $("video.recorder").hide();
   
   // hide all buttons
-  // $('#record-button').hide();
-  // $('#stop-recording-button').hide();
-  // $('#upload-button').hide();
-  // $('#cancel-button').hide();
+  $('#record-button').hide();
+  $('#stop-recording-button').hide();
+  $('#upload-button').hide();
+  $('#cancel-button').hide();
 
   var accepted_vid_formats = 
     [
