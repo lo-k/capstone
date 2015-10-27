@@ -10,18 +10,19 @@ class UsersController < ApplicationController
   end
 
   def upload_video
+    # raise
     upload = params[:video]
     upload_validation_status = EmotientApi.validate_video(upload)
 
     if upload_validation_status == "OK"
-      # video = UploadIO.new(upload.tempfile, upload.content_type, upload.original_filename)
-      # video_id = EmotientApi.new.upload_video(video)
+      video = UploadIO.new(upload.tempfile, upload.content_type, upload.original_filename)
+      video_id = EmotientApi.upload_video(video)
 
       # kari_mixed_emotions
       # video_id = "cf82beda-9600-8be9-cc04-414802410442"
 
       # q video
-      video_id = "d2f06aa9-b449-306f-f91c-e6bc02e104ec"
+      # video_id = "d2f06aa9-b449-306f-f91c-e6bc02e104ec"
 
       video_status = EmotientApi.check_video_status(video_id)
 

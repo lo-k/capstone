@@ -49,7 +49,6 @@ $(document).ready( function() {
     $('#video-upload').children('span').removeClass('glyphicon-upload');    
     $('#video-upload').children('span').addClass('glyphicon-facetime-video');
     $('#video-upload').children('h4').hide();
-    // $('#video-upload').children('h4').html("Upload or Take a Video");
     
     // Is taken care of with single button on mobile ^
     $('#video-capture').hide();
@@ -75,14 +74,12 @@ $(document).ready( function() {
 // ---------------------- UPLOADING A VIDEO ----------------------
 
   // "Upload Video" Button Triggers Input Select
-
   $('#video-upload').click(function() {
     var fileInput = $('input:file');
     fileInput.click();
   });
 
   // File Input Validations
-
   $('input:file').change(function() {
 
       var empty = false;
@@ -108,7 +105,7 @@ $(document).ready( function() {
         $('.error-message').html('Incorrect file type');
         $('.submit-upload').hide();
       
-      // if the file is not the correct size
+      // if the file is too large
       } else if (file_size > max_size) {
         console.log('file too large');
         console.log(file_size)
