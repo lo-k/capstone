@@ -31,6 +31,7 @@ body {
   font-weight: 100;
   margin: 0 auto;
   color: #fff;
+  background-color: #000;
 }
 
 .bcg {
@@ -154,13 +155,77 @@ input[type="file"] {
   color: #fff;
 }
 
+.submit-choices,
+.record-box {
+  overflow: hidden;
+}
+
+// Video Buttons
+
+.video-control-buttons {
+  margin: 20px auto;
+}
+.video-control-buttons h4 {
+  margin: 0 auto;
+}
+
+#record-button {
+  color: green;
+  border-color: green;
+  border: 2px solid;
+  border-radius: 100%;
+  height: 110px;
+  width: 110px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+#stop-recording-button {
+  color: red;
+  border-color: red;
+  border: 2px solid;
+  border-radius: 100%;
+  height: 110px;
+  width: 110px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+#upload-button {
+  color: #fff;
+  border-color: #fff;
+  border: 2px solid;
+  border-radius: 100%;
+  height: 110px;
+  width: 110px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+#cancel-button {
+  display: block;
+  margin: 20px auto;
+  font-weight: 100;
+}
+
+#cancel-button:hover {
+  color: #fff;
+  font-weight: 400;
+}
+
 // ***************************************
 // PLAYLIST PAGE
 // ***************************************
 
 .playlist-page {
   text-align: center;
-  margin-top: 50px;
+  margin: 50px auto;
 }
 
 .emotions div {
@@ -198,6 +263,24 @@ input[type="file"] {
   color: #fff;
 }
 
+.upload-again {
+  display: block;
+  margin: 0 auto;
+  width: 20%;
+  margin-top: 20px;
+}
+
+.upload-again .glyphicon-equalizer {
+  display: inline-block;
+  padding: 0px;
+  padding-right: 10px;
+}
+
+.upload-again h4 {
+  display: inline-block;
+  font-size: 1em;
+  font-weight: 100;
+}
 
 // ***************************************
 // MEDIA QUERIES
@@ -263,7 +346,7 @@ input[type="file"] {
 
     #video-upload span,
     #video-capture span {
-      padding-top: 50px;
+      padding-top: 60px;
     }
 
 }

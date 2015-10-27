@@ -21,13 +21,14 @@ $(document).ready( function() {
 // ---------------------- VIDEO SETUP ----------------------
 
   $('.submit-upload').hide();
-  $("video.recorder").hide();
+  $('.record-box').css("height", 0);
+  // $("video.recorder").hide();
   
   // hide all buttons
-  $('#record-button').hide();
-  $('#stop-recording-button').hide();
-  $('#upload-button').hide();
-  $('#cancel-button').hide();
+  // $('#record-button').hide();
+  // $('#stop-recording-button').hide();
+  // $('#upload-button').hide();
+  // $('#cancel-button').hide();
 
   var accepted_vid_formats = 
     [
@@ -256,6 +257,12 @@ $(document).ready( function() {
 
   // Set up video stream
   $('#video-capture').click(function() {
+    $('.file-formats').hide();
+    // animate .submit-choices height to 0
+    $('.submit-choices').animate({ height: 0 }, 500)
+    // animate .record-box height to auto?
+    $('.record-box').animate({ height: 500 }, 500)
+
     setUpVideo();
   });
 
@@ -303,5 +310,12 @@ $(document).ready( function() {
 
   $('#cancel-button').click(function() {
     cancelVideo();
+
+    $('.file-formats').show();
+    // animate .submit-choices height to 0
+    $('.submit-choices').animate({ height: 240 }, 500)
+    // animate .record-box height to auto?
+    $('.record-box').animate({ height: 0 }, 500)
+
   });
 })
