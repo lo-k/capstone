@@ -45,9 +45,13 @@ $(document).ready( function() {
   var mobile = onMobileDevice();
 
   if (mobile) {
-    $('#video-upload').children('h4').html("Upload or Take a Video");
+    $('#video-upload').children('span').removeClass('glyphicon-upload');    
+    $('#video-upload').children('span').addClass('glyphicon-facetime-video');
+    $('#video-upload').children('h4').hide();
+    // $('#video-upload').children('h4').html("Upload or Take a Video");
+    
+    // Is taken care of with single button on mobile ^
     $('#video-capture').hide();
-
     $('.file-formats').hide();
   }
 

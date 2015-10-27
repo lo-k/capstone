@@ -1,15 +1,18 @@
+<%= image_tag("blk-texture.jpg", class: "bcg") %>
+
 <div class="upload-page">
   <h2>Good <%= @greeting %>, <span><%= image_tag "spotify_icon.png" %><%= @user.name %>!</span></h2>
   <h4>Let's find you something to listen to.</h4>
+  <h5>Turn a video selfie into a music playlist.</h5>
 
   <div class="submit-choices">
     <div id="video-upload" class="video-choice btn">
-      <!-- <span class="glyphicon glyphicon-upload" aria-hidden="true"></span> -->
-      <h4>Upload a Video</h4>
+      <span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
+      <!-- <h4>Upload a Video</h4> -->
     </div>
     <div id="video-capture" class="video-choice btn">
-      <!-- <span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span> -->
-      <h4>Take a Video</h4>
+      <span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span>
+      <!-- <h4>Take a Video</h4> -->
     </div>
   </div>
 
