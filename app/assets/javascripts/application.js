@@ -18,6 +18,8 @@
 
 $(document).ready( function() {
 
+// ---------------------- VIDEO SETUP ----------------------
+
   $('.submit-upload').hide();
   $("video.recorder").hide();
   
@@ -37,6 +39,31 @@ $(document).ready( function() {
       "audio/mpeg",         // .mpg
       "audio/x-ms-wmv",     // .wmv
     ]
+
+// ------------------- MOBILE DISPLAY CHANGES ---------------
+
+  var mobile = onMobileDevice();
+
+  if (mobile) {
+    $('#video-upload').children('h4').html("Upload or Take a Video");
+    $('#video-capture').hide();
+  }
+
+  function onMobileDevice() { 
+   if( navigator.userAgent.match(/Android/i)
+   || navigator.userAgent.match(/webOS/i)
+   || navigator.userAgent.match(/iPhone/i)
+   || navigator.userAgent.match(/iPad/i)
+   || navigator.userAgent.match(/iPod/i)
+   || navigator.userAgent.match(/BlackBerry/i)
+   || navigator.userAgent.match(/Windows Phone/i)
+   ){
+      return true;
+    }
+   else {
+      return false;
+    }
+  }
 
 // ---------------------- UPLOADING A VIDEO ----------------------
 
