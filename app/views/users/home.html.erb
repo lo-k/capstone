@@ -1,14 +1,14 @@
 <div class="upload-page">
-  <h2>Good <%= @greeting %>, <%= image_tag "spotify_icon.png" %><%= @user.name %>!</h2>
+  <h2>Good <%= @greeting %>, <span><%= image_tag "spotify_icon.png" %><%= @user.name %>!</span></h2>
   <h4>Let's find you something to listen to.</h4>
 
   <div class="submit-choices">
     <div id="video-upload" class="video-choice btn">
-      <span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
+      <!-- <span class="glyphicon glyphicon-upload" aria-hidden="true"></span> -->
       <h4>Upload a Video</h4>
     </div>
     <div id="video-capture" class="video-choice btn">
-      <span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span>
+      <!-- <span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span> -->
       <h4>Take a Video</h4>
     </div>
   </div>
@@ -16,14 +16,14 @@
   <div class="upload-box">
     <p class="error-message"></p>
 
-    <p>Accepted file formats: AVI, MOV, MP4, MPG, WMV, WEBM</p>
-    <p>(Video must be between 10-20 seconds long)</p>
+    <p class="file-formats">Accepted file formats: AVI, MOV, MP4, MPG, WMV, WEBM</p>
+    <p>(Video must be 10-20 seconds long)</p>
 
     <%= form_tag(playlist_path, multipart: true) do %>
       <div class="form-group">
           <%= file_field_tag :video, accept: "video/*", capture: "camcorder" , id: "capture"%>
 
-          <%= submit_tag 'Upload', class: "btn btn-default submit-upload", disabled: "disabled" %>
+          <%= submit_tag 'Upload', class: "btn submit-upload", disabled: "disabled" %>
         </div>
     <% end %>
   </div>
@@ -43,8 +43,8 @@
   <br>
   <%= link_to "Not you? Sign out", signout_path %>
 
-  <hr class="upload-hr">
-  <h3 class="logo">music selfie</h3>
+<!--   <hr class="upload-hr">
+  <h3 class="logo">music selfie</h3> -->
 </div>
 
 <!-- - - - - - - - - - - - - - - - - - - - - -->

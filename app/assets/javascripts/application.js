@@ -47,6 +47,8 @@ $(document).ready( function() {
   if (mobile) {
     $('#video-upload').children('h4').html("Upload or Take a Video");
     $('#video-capture').hide();
+
+    $('.file-formats').hide();
   }
 
   function onMobileDevice() { 

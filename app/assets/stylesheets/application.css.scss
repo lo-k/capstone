@@ -85,40 +85,155 @@ body {
 // UPLOAD PAGE
 // ***************************************
 
+.upload-page {
+  text-align: center;
+  margin-top: 100px;
+}
 
+.upload-page span {
+  display: block;
+}
 
+.upload-page h2 {
+  font-weight: 100;
+}
 
+.upload-page h4 {
+  font-weight: 100;
+  margin: 20px auto;
+}
+
+.video-choice:hover {
+  color: #fff;
+}
+
+.glyphicon {
+  font-size: 5em;
+}
+
+#video-upload,
+#video-capture {
+  border-radius: 100%;
+  border: 1px solid #fff;
+  height: 200px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.file-formats {
+  display: none;
+}
+
+.error-message {
+  color: red;
+  font-weight: 400;
+}
+
+input[type="file"] {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.upload-page .btn {
+  border: 1px solid #fff;
+  padding: 10px 20px;
+  color: #fff;
+}
 
 // ***************************************
 // PLAYLIST PAGE
 // ***************************************
+
+.playlist-page {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.emotions div {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.emotions div span {
+  padding-bottom: 0;
+}
+
+.emo-tag {
+  font-weight: 100;
+  padding: 0 10px;
+  display: inline-block;
+}
+
+.playlist-page h1 {
+  font-weight: 100;
+}
+
+.playlist-page span {
+  font-size: 1.7em;
+  display: block;
+  padding: 20px;
+}
+
+.playlist-page .btn {
+  border: 1px solid #fff;
+  padding: 10px 20px;
+  color: #fff;
+}
+
+.playlist-page .btn:hover {
+  color: #fff;
+}
 
 
 // ***************************************
 // MEDIA QUERIES
 // ***************************************
 
-/*XL screen */
+/*Desktop */
 @media screen and (min-width: 1024px) {
+  
+  //  WELCOME PAGE ----------
+    .welcome-page h1 {
+      font-size: 9em;
+    }
+
+    .sign-in {
+      width: 50%;
+    }
+
+  //  UPLOAD PAGE ----------
 
 }
 
 /*iPad horizontal*/
 @media screen and (max-width: 1024px) {
+  
+  //  WELCOME PAGE ----------
+    .sign-in {
+      width: 60%;
+    }
+
+  //  UPLOAD PAGE -----------
 
 }
 
 /*iPad vertical*/
 @media screen and (min-width: 768px) {
+  
+  //  WELCOME PAGE ----------
+    .welcome-page h1 {
+      padding-top: 200px;
+    }
 
-  .welcome-page h1 {
-    padding-top: 200px;
-  }
+    .sign-in {
+      width: 70%;
+      margin-top: 40px;
+    }
 
-  .sign-in {
-    width: 70%;
-    margin-top: 40px;
-  }
+  //  UPLOAD PAGE ----------
 
 }
 
