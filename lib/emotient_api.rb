@@ -13,6 +13,7 @@ class EmotientApi
       "video/mp4",          #.mp4
       "audio/mpeg",         #.mpg
       "audio/x-ms-wmv",     #.wmv
+      "video/webm"          #.webm
     ]
 
   def self.validate_video(video)
