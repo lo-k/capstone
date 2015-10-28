@@ -84,24 +84,23 @@ body {
 
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7db9e8+0,000000+100&0+54,1+92 */
 
-.gradiant:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 400px;
-  z-index: -1000;
-  background: -moz-linear-gradient(top,  rgba(125,185,232,0) 0%, rgba(57,85,107,0) 54%, rgba(10,15,19,1) 92%, rgba(0,0,0,1) 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(125,185,232,0)), color-stop(54%,rgba(57,85,107,0)), color-stop(92%,rgba(10,15,19,1)), color-stop(100%,rgba(0,0,0,1)));
-  background: -webkit-linear-gradient(top,  rgba(125,185,232,0) 0%,rgba(57,85,107,0) 54%,rgba(10,15,19,1) 92%,rgba(0,0,0,1) 100%);
-  background: -o-linear-gradient(top,  rgba(125,185,232,0) 0%,rgba(57,85,107,0) 54%,rgba(10,15,19,1) 92%,rgba(0,0,0,1) 100%);
-  background: -ms-linear-gradient(top,  rgba(125,185,232,0) 0%,rgba(57,85,107,0) 54%,rgba(10,15,19,1) 92%,rgba(0,0,0,1) 100%);
-  background: linear-gradient(to bottom,  rgba(125,185,232,0) 0%,rgba(57,85,107,0) 54%,rgba(10,15,19,1) 92%,rgba(0,0,0,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007db9e8', endColorstr='#000000',GradientType=0 );
-
-}
+// .gradiant:before {
+//   content: "";
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   bottom: 0;
+//   left: 0;
+//   height: 400px;
+//   z-index: -1000;
+//   background: -moz-linear-gradient(top,  rgba(125,185,232,0) 0%, rgba(57,85,107,0) 54%, rgba(10,15,19,1) 92%, rgba(0,0,0,1) 100%);
+//   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(125,185,232,0)), color-stop(54%,rgba(57,85,107,0)), color-stop(92%,rgba(10,15,19,1)), color-stop(100%,rgba(0,0,0,1)));
+//   background: -webkit-linear-gradient(top,  rgba(125,185,232,0) 0%,rgba(57,85,107,0) 54%,rgba(10,15,19,1) 92%,rgba(0,0,0,1) 100%);
+//   background: -o-linear-gradient(top,  rgba(125,185,232,0) 0%,rgba(57,85,107,0) 54%,rgba(10,15,19,1) 92%,rgba(0,0,0,1) 100%);
+//   background: -ms-linear-gradient(top,  rgba(125,185,232,0) 0%,rgba(57,85,107,0) 54%,rgba(10,15,19,1) 92%,rgba(0,0,0,1) 100%);
+//   background: linear-gradient(to bottom,  rgba(125,185,232,0) 0%,rgba(57,85,107,0) 54%,rgba(10,15,19,1) 92%,rgba(0,0,0,1) 100%);
+//   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007db9e8', endColorstr='#000000',GradientType=0 );
+// }
 
 // ***************************************
 // UPLOAD PAGE
@@ -312,22 +311,22 @@ input[type="file"] {
       width: 60%;
     }
 
-    .gradiant:before {
-      height: 470px;
-    }
+    // .gradiant:before {
+    //   height: 470px;
+    // }
 }
 
-@media screen and (min-width: 530px) {
-  .gradiant:before {
-    height: 600px;
-  }
-}
+// @media screen and (min-width: 530px) {
+//   .gradiant:before {
+//     height: 600px;
+//   }
+// }
 
-@media screen and (min-width: 690px) {
-  .gradiant:before {
-    height: 700px;
-  }
-}
+// @media screen and (min-width: 690px) {
+//   .gradiant:before {
+//     height: 700px;
+//   }
+// }
 
 
 /*iPad vertical*/
@@ -342,10 +341,6 @@ input[type="file"] {
     .sign-in {
       width: 50%;
       margin-top: 40px;
-    }
-
-    .gradiant:before {
-
     }
 
   //  UPLOAD PAGE ----------
@@ -363,11 +358,11 @@ input[type="file"] {
 
 }
 
-@media screen and (min-width: 820px) {
-  .gradiant:before {
-    height: 0px;
-  }
-}
+// @media screen and (min-width: 820px) {
+//   .gradiant:before {
+//     height: 0px;
+//   }
+// }
 
 /*iPad horizontal*/
 @media screen and (min-width: 1024px) {
