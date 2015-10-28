@@ -140,15 +140,13 @@ body {
   border: 1px solid #fff;
   height: 200px;
   width: 200px;
-  display: flex;
-  align-items: center;
+  padding: 0;
   margin: 20px auto;
 }
 
 #video-upload span,
 #video-capture span {
-  margin: 0 auto;
-  padding-top: 50px;
+  line-height: 200px;
 }
 
 .error-message {
@@ -351,11 +349,6 @@ input[type="file"] {
       display: inline-block;
     }
 
-    #video-upload span,
-    #video-capture span {
-      padding-top: 60px;
-    }
-
 }
 
 // @media screen and (min-width: 820px) {
@@ -393,42 +386,16 @@ input[type="file"] {
     }
 
     .welcome-page h1 {
-      // font-size: 9em;
     }
 
     .sign-in {
-      // width: 40%;
     }
 
-  //  UPLOAD PAGE ----------
 
 }
 
 /* Large Screen */
 @media screen and (min-width: 1600px) {
   
-  //  WELCOME PAGE ----------
-    // .bcg {
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    //   z-index: -5000;
-    // }
-
-    // .welcome-page h1 {
-    //   // font-size: 9em;
-    // }
-
-    // .sign-in {
-    //   // width: 40%;
-    // }
-
-  //  UPLOAD PAGE ----------
-
 }
-
-/*iPhone horizontal ?????? */
-// @media screen and (max-width: 768px) {
-
-// }
 
