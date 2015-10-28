@@ -285,42 +285,13 @@ input[type="file"] {
 // MEDIA QUERIES
 // ***************************************
 
-/*Desktop */
-@media screen and (min-width: 1024px) {
-  
-  //  WELCOME PAGE ----------
-    .bcg {
-      // width: 100%;
-      // height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -5000;
-    }
-
-    .welcome-page h1 {
-      font-size: 9em;
-    }
-
-    .sign-in {
-      width: 40%;
-    }
-
-  //  UPLOAD PAGE ----------
-
-}
-
-/*iPad horizontal*/
-@media screen and (max-width: 1024px) {
-  
+@media screen and (min-width: 440px) {
   //  WELCOME PAGE ----------
     .sign-in {
       width: 60%;
     }
-
-  //  UPLOAD PAGE -----------
-
 }
+
 
 /*iPad vertical*/
 @media screen and (min-width: 768px) {
@@ -328,10 +299,11 @@ input[type="file"] {
   //  WELCOME PAGE ----------
     .welcome-page h1 {
       padding-top: 200px;
+      font-size: 7.5em;
     }
 
     .sign-in {
-      width: 70%;
+      width: 50%;
       margin-top: 40px;
     }
 
@@ -347,6 +319,69 @@ input[type="file"] {
     #video-capture span {
       padding-top: 60px;
     }
+
+}
+
+/*iPad horizontal*/
+@media screen and (min-width: 1024px) {
+  
+  //  WELCOME PAGE ----------
+
+    .welcome-page h1 {
+      font-size: 9em;
+    }
+
+    .sign-in {
+      width: 40%;
+    }
+
+  //  UPLOAD PAGE -----------
+
+}
+
+/*Desktop */
+@media screen and (min-width: 1200px) {
+  
+  //  WELCOME PAGE ----------
+    .bcg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -5000;
+    }
+
+    .welcome-page h1 {
+      // font-size: 9em;
+    }
+
+    .sign-in {
+      // width: 40%;
+    }
+
+  //  UPLOAD PAGE ----------
+
+}
+
+/* Large Screen */
+@media screen and (min-width: 1600px) {
+  
+  //  WELCOME PAGE ----------
+    // .bcg {
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   z-index: -5000;
+    // }
+
+    // .welcome-page h1 {
+    //   // font-size: 9em;
+    // }
+
+    // .sign-in {
+    //   // width: 40%;
+    // }
+
+  //  UPLOAD PAGE ----------
 
 }
 
