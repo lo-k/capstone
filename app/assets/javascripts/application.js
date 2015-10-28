@@ -136,6 +136,7 @@ $(document).ready( function() {
   var recording = false;
   var playing = false;
   var formData = null;
+  var video_blob;
 
   // set the video options
   var videoOptions = {
@@ -187,7 +188,7 @@ $(document).ready( function() {
     // video.currentTime = 0;
     // video.load();
     // video.play();
-    
+
     // document.querySelector("video.recorder").currentTime = 0;
     video_recorder = RecordRTC(stream, videoOptions);
 
@@ -217,7 +218,7 @@ $(document).ready( function() {
 
     // set form data
     formData = new FormData();
-    var video_blob = video_recorder.getBlob();
+    video_blob = video_recorder.getBlob();
     formData.append("video", video_blob);
 
     // add player for recorded video
@@ -294,13 +295,13 @@ $(document).ready( function() {
   //   request.send(formData);
   // });
 
-  var postVideo = function(form_data) {
-    console.log(form_data);
+  var postVideo = function(video_obj) {
+    // console.log("form_data = " + form_data);
 
     $.ajax({
       type: "POST",
       url: '/playlist',
-      video: form_data,
+      data: { video: video_obj },
       success: function(data) {
         console.log(data);
       }
@@ -309,7 +310,7 @@ $(document).ready( function() {
 
   $('#upload-button').click(function() {
     // submit the video to upload_video controller application
-    postVideo(formData);
+    postVideo(video_blob);
   });
 
   $('#cancel-button').click(function() {

@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def upload_video
-    # raise
+
     upload = params[:video]
     upload_validation_status = EmotientApi.validate_video(upload)
 
