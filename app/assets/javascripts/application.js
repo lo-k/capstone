@@ -182,8 +182,15 @@ $(document).ready( function() {
 
   var startRecording = function() {
     // init recorder
-    video_recorder = RecordRTC(stream, videoOptions);
+    // var video = $('video').get(0)
+    // video.pause();
+    // video.currentTime = 0;
+    // video.load();
+    // video.play();
     
+    // document.querySelector("video.recorder").currentTime = 0;
+    video_recorder = RecordRTC(stream, videoOptions);
+
     // remove prior recorded video if one is shown
     $("#video-player").remove();
 
