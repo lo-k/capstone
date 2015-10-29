@@ -127,16 +127,25 @@ $(document).ready( function() {
 
   // Start animation after submitting the form
 
-  $('form').submit(function() {
-    $('.waiting-animation').show();
-    $('.waiting-animation > h4').addClass('animate');
-    $('#e1').addClass('animate');
-    $('#e2').addClass('animate');
-    $('#e3').addClass('animate');
-    $('#e4').addClass('animate');
+  // $('form').on("submit", function(event) {
+  $('.submit-upload').on("click", function(event) {
+    event.preventDefault();
+
+    console.log('submitted file');
+
+    setTimeout(function() {    
+      $('.waiting-animation').show();
+      $('.waiting-animation > h4').addClass('animate');
+      $('#e1, #e2, #e3, #e4').addClass('animate');
+    }, 10);
 
     setTimeout(firstDelayMsg, 60000);
     setTimeout(secondDelayMsg, 120000);
+    
+    setTimeout(function() {
+      $('form').submit();
+    }, 1000);
+
   });
 
   var firstDelayMsg = function() {
@@ -305,36 +314,47 @@ $(document).ready( function() {
   });
 
   // Upload video (FROM SAMPLE DEMO)
-  // $("#upload-button").click(function(){
-  //   var request = new XMLHttpRequest();
+  $("#upload-button").click(function(){
+    console.log('uploading');
+    var request = new XMLHttpRequest();
 
-  //   request.onreadystatechange = function () {
-  //     if (request.readyState == 4 && request.status == 200) {
-  //       window.location.href = "/video/"+request.responseText;
-  //     }
-  //   };
-
-  //   request.open('POST', "/playlist");
-  //   request.send(formData);
-  // });
-
-  var postVideo = function(video_obj) {
-    // console.log("form_data = " + form_data);
-
-    $.ajax({
-      type: "POST",
-      url: '/playlist',
-      data: { video: video_obj },
-      success: function(data) {
-        console.log(data);
+    request.onreadystatechange = function () {
+      if (request.readyState == 4 && request.status == 200) {
+        window.location.href = "/video/"+request.responseText;
       }
-    });
-  }
+    };
 
-  $('#upload-button').click(function() {
-    // submit the video to upload_video controller application
-    postVideo(video_blob);
+    var data = new FormData();
+    data.append('video', video_blob);
+
+    request.open('POST', "/playlist");
+    request.send(data);
   });
+
+  // function postVideo(video_obj) {
+  //   // console.log("form_data = " + form_data);
+  //   console.log("posting");
+  //   console.log(video_obj);
+    
+  //   var data = new FormData();
+  //   data.append('video', video_obj);
+    
+  //   $.ajax({
+  //     type: "POST",
+  //     url: '/playlist',
+  //     data: data,
+  //     success: function(data) {
+  //       console.log(data);
+  //     }
+  //   });
+  // }
+
+  // $('#upload-button').click(function() {
+  //   // submit the video to upload_video controller application
+  //   console.log(video_blob);
+
+  //   postVideo(video_blob);
+  // });
 
   $('#cancel-button').click(function() {
     cancelVideo();

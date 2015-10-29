@@ -254,7 +254,7 @@ input[type="file"] {
 .waiting-animation h4.animate {
   animation: bubble-fade 4s infinite ease-in-out;
   -moz-animation: bubble-fade 4s infinite ease-in-out;
-  -webkit-animation: bubble-fade 4s infinite ease-in-out;
+  -webkit-animation: bubble-fade 4s 0.1s infinite ease-in-out;
 }
 
 .equalizer {
@@ -277,115 +277,115 @@ input[type="file"] {
 #e1.animate {
   animation: equalizer-pulse-first 2s infinite;
   -moz-animation: equalizer-pulse-first 2s infinite;
-  -webkit-animation: equalizer-pulse-first 2s infinite;
+  -webkit-animation: equalizer-pulse-first 2s 0.1s infinite;
 }
 
 #e2.animate {
   animation: equalizer-pulse-second 1s infinite;
   -moz-animation: equalizer-pulse-second 1s infinite;
-  -webkit-animation: equalizer-pulse-second 1s infinite;
+  -webkit-animation: equalizer-pulse-second 1s 0.1s infinite;
 }
 
 #e3.animate {
   animation: equalizer-pulse-third 2s infinite;
   -moz-animation: equalizer-pulse-third 2s infinite;
-  -webkit-animation: equalizer-pulse-third 2s infinite;
+  -webkit-animation: equalizer-pulse-third 2s 0.1s infinite;
 }
 
 #e4.animate {
   animation: equalizer-pulse-fourth 1s infinite;
   -moz-animation: equalizer-pulse-fourth 1s infinite;
-  -webkit-animation: equalizer-pulse-fourth 1s infinite;
+  -webkit-animation: equalizer-pulse-fourth 1s 0.1s infinite;
 }
 // -------------------------------------------
-@keyframes bubble-fade {
+@keyframes 'bubble-fade' {
   0% { opacity: 0; }
   50% { opacity: 1; }
   100% { opacity: 0; }
 }
 
-@-moz-keyframes bubble-fade {
+@-moz-keyframes 'bubble-fade' {
   0% { opacity: 0; }
   50% { opacity: 1; }
   100% { opacity: 0; }
 }
 
-@-webkit-keyframes bubble-fade {
+@-webkit-keyframes 'bubble-fade' {
   0% { opacity: 0; }
   50% { opacity: 1; }
   100% { opacity: 0; }
 }
 // -------------------------------------------
-@keyframes equalizer-pulse-first {
+@keyframes 'equalizer-pulse-first' {
   0% { height: 10px; }
   50% { height: 20px; }
   100% { height: 10px; }
 }
 
-@-moz-keyframes equalizer-pulse-first {
+@-moz-keyframes 'equalizer-pulse-first' {
   0% { height: 10px; }
   50% { height: 20px; }
   100% { height: 10px; }
 }
 
-@-webkit-keyframes equalizer-pulse-first {
+@-webkit-keyframes 'equalizer-pulse-first' {
   0% { height: 10px; }
   50% { height: 20px; }
   100% { height: 10px; }
 }
 // -------------------------------------------
-@keyframes equalizer-pulse-second {
+@keyframes 'equalizer-pulse-second' {
   0% { height: 30px; }
   50% { height: 10px; }
   100% { height: 30px; }
 }
 
-@-moz-keyframes equalizer-pulse-second {
+@-moz-keyframes 'equalizer-pulse-second' {
   0% { height: 30px; }
   50% { height: 10px; }
   100% { height: 30px; }
 }
 
-@-webkit-keyframes equalizer-pulse-second {
+@-webkit-keyframes 'equalizer-pulse-second' {
   0% { height: 30px; }
   50% { height: 10px; }
   100% { height: 30px; }
 }
 // -------------------------------------------
-@keyframes equalizer-pulse-third {
+@keyframes 'equalizer-pulse-third' {
   0% { height: 20px; }
   40% { height: 10px; }
   60% { height: 30px; }
   100% { height: 20px; }
 }
 
-@-moz-keyframes equalizer-pulse-third {
+@-moz-keyframes 'equalizer-pulse-third' {
   0% { height: 20px; }
   40% { height: 10px; }
   60% { height: 30px; }
   100% { height: 20px; }
 }
 
-@-webkit-keyframes equalizer-pulse-third {
+@-webkit-keyframes 'equalizer-pulse-third' {
   0% { height: 20px; }
   40% { height: 10px; }
   60% { height: 30px; }
   100% { height: 20px; }
 }
 // -------------------------------------------
-@keyframes equalizer-pulse-fourth {
+@keyframes 'equalizer-pulse-fourth' {
   0% { height: 20px; }
   50% { height: 15px; }
   100% { height: 20px; }
 }
 
-@-moz-keyframes equalizer-pulse-fourth {
+@-moz-keyframes 'equalizer-pulse-fourth' {
   0% { height: 20px; }
   50% { height: 15px; }
   100% { height: 20px; }
 }
 
-@-webkit-keyframes equalizer-pulse-fourth {
+@-webkit-keyframes 'equalizer-pulse-fourth' {
   0% { height: 20px; }
   50% { height: 15px; }
   100% { height: 20px; }
@@ -464,6 +464,9 @@ input[type="file"] {
       width: 60%;
     }
 
+    .waiting-animation {
+      padding-top: 150px;
+    }
 
 }
 
