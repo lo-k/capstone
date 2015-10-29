@@ -2,17 +2,17 @@
 <div class="playlist-page">
   <% if flash[:error] %>
     <h3><%= flash[:error] %></h3>
+  <% else %>
+    <div class="emotions">
+      <% @emotions_percents_hash.each do |emotion, percent| %>
+        <div id="<%= emotion %>"><span><%= percent %>%</span><h6 class="emo-tag"><%= emotion %></h6></div>
+      <% end %>
+    </div>
+
+    <h1>Check out your <span class="logo">music selfie</span></h1>
+
+    <iframe src="https://embed.spotify.com/?uri=<%= @playlist_uri %>" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>  
   <% end %>
-
-  <div class="emotions">
-    <% @emotions_percents_hash.each do |emotion, percent| %>
-      <div id="<%= emotion %>"><span><%= percent %>%</span><h6 class="emo-tag"><%= emotion %></h6></div>
-    <% end %>
-  </div>
-
-  <h1>Check out your <span class="logo">music selfie</span></h1>
-
-  <iframe src="https://embed.spotify.com/?uri=<%= @playlist_uri %>" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
 
   <br>
   <%= link_to selfie_path , class: "btn upload-again" do %>
