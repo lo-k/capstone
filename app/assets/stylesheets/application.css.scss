@@ -253,6 +253,8 @@ input[type="file"] {
 
 .waiting-animation h4.animate {
   animation: bubble-fade 4s infinite ease-in-out;
+  -moz-animation: bubble-fade 4s infinite ease-in-out;
+  -webkit-animation: bubble-fade 4s infinite ease-in-out;
 }
 
 .equalizer {
@@ -274,38 +276,82 @@ input[type="file"] {
 
 #e1.animate {
   animation: equalizer-pulse-first 2s infinite;
+  -moz-animation: equalizer-pulse-first 2s infinite;
+  -webkit-animation: equalizer-pulse-first 2s infinite;
 }
 
 #e2.animate {
   animation: equalizer-pulse-second 1s infinite;
+  -moz-animation: equalizer-pulse-second 1s infinite;
+  -webkit-animation: equalizer-pulse-second 1s infinite;
 }
 
 #e3.animate {
   animation: equalizer-pulse-third 2s infinite;
+  -moz-animation: equalizer-pulse-third 2s infinite;
+  -webkit-animation: equalizer-pulse-third 2s infinite;
 }
 
 #e4.animate {
   animation: equalizer-pulse-fourth 1s infinite;
+  -moz-animation: equalizer-pulse-fourth 1s infinite;
+  -webkit-animation: equalizer-pulse-fourth 1s infinite;
 }
-
+// -------------------------------------------
 @keyframes bubble-fade {
   0% { opacity: 0; }
   50% { opacity: 1; }
   100% { opacity: 0; }
 }
 
+@-moz-keyframes bubble-fade {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@-webkit-keyframes bubble-fade {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+// -------------------------------------------
 @keyframes equalizer-pulse-first {
   0% { height: 10px; }
   50% { height: 20px; }
   100% { height: 10px; }
 }
 
+@-moz-keyframes equalizer-pulse-first {
+  0% { height: 10px; }
+  50% { height: 20px; }
+  100% { height: 10px; }
+}
+
+@-webkit-keyframes equalizer-pulse-first {
+  0% { height: 10px; }
+  50% { height: 20px; }
+  100% { height: 10px; }
+}
+// -------------------------------------------
 @keyframes equalizer-pulse-second {
   0% { height: 30px; }
   50% { height: 10px; }
   100% { height: 30px; }
 }
 
+@-moz-keyframes equalizer-pulse-second {
+  0% { height: 30px; }
+  50% { height: 10px; }
+  100% { height: 30px; }
+}
+
+@-webkit-keyframes equalizer-pulse-second {
+  0% { height: 30px; }
+  50% { height: 10px; }
+  100% { height: 30px; }
+}
+// -------------------------------------------
 @keyframes equalizer-pulse-third {
   0% { height: 20px; }
   40% { height: 10px; }
@@ -313,7 +359,33 @@ input[type="file"] {
   100% { height: 20px; }
 }
 
+@-moz-keyframes equalizer-pulse-third {
+  0% { height: 20px; }
+  40% { height: 10px; }
+  60% { height: 30px; }
+  100% { height: 20px; }
+}
+
+@-webkit-keyframes equalizer-pulse-third {
+  0% { height: 20px; }
+  40% { height: 10px; }
+  60% { height: 30px; }
+  100% { height: 20px; }
+}
+// -------------------------------------------
 @keyframes equalizer-pulse-fourth {
+  0% { height: 20px; }
+  50% { height: 15px; }
+  100% { height: 20px; }
+}
+
+@-moz-keyframes equalizer-pulse-fourth {
+  0% { height: 20px; }
+  50% { height: 15px; }
+  100% { height: 20px; }
+}
+
+@-webkit-keyframes equalizer-pulse-fourth {
   0% { height: 20px; }
   50% { height: 15px; }
   100% { height: 20px; }
@@ -366,7 +438,7 @@ input[type="file"] {
 .upload-again {
   display: block;
   margin: 0 auto;
-  width: 20%;
+  width: 80%;
   margin-top: 20px;
 }
 
@@ -392,16 +464,19 @@ input[type="file"] {
       width: 60%;
     }
 
-    // .gradiant:before {
-    //   height: 470px;
-    // }
+
 }
 
-// @media screen and (min-width: 530px) {
-//   .gradiant:before {
-//     height: 600px;
-//   }
-// }
+@media screen and (min-width: 530px) {
+  // .gradiant:before {
+  //   height: 600px;
+  // }
+
+  //  UPLOAD PAGE ----------
+    .upload-again {
+      width: 65%;
+    }
+}
 
 // @media screen and (min-width: 690px) {
 //   .gradiant:before {
@@ -425,6 +500,10 @@ input[type="file"] {
     }
 
   //  UPLOAD PAGE ----------
+
+    .upload-again {
+      width: 50%;
+    }
 
     #video-upload,
     #video-capture {
@@ -455,6 +534,9 @@ input[type="file"] {
 
   //  UPLOAD PAGE -----------
 
+    .upload-again {
+      width: 40%;
+    }
 }
 
 /*Desktop */
@@ -472,6 +554,10 @@ input[type="file"] {
     }
 
     .sign-in {
+    }
+
+    .upload-again {
+      width: 25%;
     }
 
 
