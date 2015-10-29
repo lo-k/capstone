@@ -180,7 +180,7 @@ input[type="file"] {
 // Video Buttons
 
 .video-control-buttons {
-  margin: 20px auto;
+  // margin: 20px auto;
 }
 .video-control-buttons h4 {
   margin: 0 auto;
@@ -234,6 +234,12 @@ input[type="file"] {
 #cancel-button:hover {
   color: #fff;
   font-weight: 400;
+}
+
+#timer span {
+  display: inline-block;
+  padding: 5px;
+  font-size: 2em;
 }
 
 // ***************************************
