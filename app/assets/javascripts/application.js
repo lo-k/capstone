@@ -55,7 +55,7 @@ $(document).ready( function() {
     // single button on mobile ^
     $('#video-capture').hide();
     $('.file-formats').hide();
-  }
+  } 
 
   function onMobileDevice() { 
    if( navigator.userAgent.match(/Android/i)

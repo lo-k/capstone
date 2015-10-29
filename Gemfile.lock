@@ -103,6 +103,10 @@ GEM
     mimemagic (0.3.0)
     mini_portile (0.6.2)
     minitest (5.8.1)
+    mobileesp_converted (0.2.3)
+    mobvious (0.3.2)
+      mobileesp_converted (~> 0.2.0)
+      rack (>= 1.1.0)
     multi_json (1.11.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -240,6 +244,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mimemagic
+  mobvious
   multipart-post
   omniauth
   omniauth-spotify

@@ -1,4 +1,8 @@
-<%= image_tag("selfie_img_fade.jpg", class: "bcg") %>
+<% if device_type == :mobile %>
+  <%= image_tag("selfie_img_fade_mobile.jpg", class: "bcg") %>
+<% else %>
+  <%= image_tag("selfie_img_fade.jpg", class: "bcg") %>
+<% end %>
 
 <div class="welcome-page">
   <div class="selfie-hero home-bcg">
