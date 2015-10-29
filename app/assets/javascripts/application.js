@@ -201,6 +201,10 @@ $(document).ready( function() {
       // show player
       $("video.recorder").show();
 
+      // reset timer
+      $('#minutes').html('00');
+      $('#seconds').html('00');
+
       // show start and cancel buttons
       $('.video-control-buttons').show();
       $('#record-button').show();
@@ -214,15 +218,8 @@ $(document).ready( function() {
   };
 
   var startRecording = function() {
-    // init recorder
-    // var video = $('video').get(0)
-    // video.pause();
-    // video.currentTime = 0;
-    // video.load();
-    // video.play();
-
-    // document.querySelector("video.recorder").currentTime = 0;
     video_recorder = RecordRTC(stream, videoOptions);
+    startTimer();
 
     // remove prior recorded video if one is shown
     $("#video-player").remove();
@@ -242,11 +239,27 @@ $(document).ready( function() {
     recording = true;
   }
 
+  var timer;
+
+  function startTimer() {
+    var sec = 0;
+
+    function pad (val) { 
+      return val > 9 ? val : "0" + val; 
+    }
+
+    timer = setInterval( function(){
+      $("#seconds").html(pad(++sec%60));
+      $("#minutes").html(pad(parseInt(sec/60,10)));
+    }, 1000);
+  }
+
   var stopRecording = function() {
     // stop recording and turn off camera stream
     video_recorder.stopRecording();
     stream.stop();
     recording = false;
+    clearInterval(timer);
 
     // set form data
     formData = new FormData();
@@ -316,6 +329,9 @@ $(document).ready( function() {
   // Upload video (FROM SAMPLE DEMO)
   $("#upload-button").click(function(){
     console.log('uploading');
+
+    displayAnimation();
+
     var request = new XMLHttpRequest();
 
     request.onreadystatechange = function () {
@@ -330,6 +346,14 @@ $(document).ready( function() {
     request.open('POST', "/playlist");
     request.send(data);
   });
+
+  function displayAnimation() {
+    $('.waiting-animation').show();
+    $('.waiting-animation > h4').addClass('animate');
+    $('#e1, #e2, #e3, #e4').addClass('animate');
+    setTimeout(firstDelayMsg, 60000);
+    setTimeout(secondDelayMsg, 120000);
+  }
 
   // function postVideo(video_obj) {
   //   // console.log("form_data = " + form_data);
