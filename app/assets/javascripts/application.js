@@ -270,6 +270,7 @@ $(document).ready( function() {
     video_player.src = URL.createObjectURL(video_blob);
     video_player.controls = "controls";
     $("#player").append(video_player);
+    // $("#blob").val(URL.createObjectURL(video_blob));
 
     // hide recorder
     $("video.recorder").hide();
@@ -332,11 +333,15 @@ $(document).ready( function() {
 
     var request = new XMLHttpRequest();
 
-    // request.onreadystatechange = function () {
-    //   if (request.readyState == 4 && request.status == 200) {
-    //     window.location.href = "/video/"+request.responseText;
-    //   }
-    // };
+    request.onreadystatechange = function () {
+      if (request.readyState == 4 && request.status == 200) {
+          console.log('request completed');
+
+          var html = request.responseText
+          $('.upload-page').hide();
+          $('.playlist-results').html(html);
+        }
+    };
 
     var data = new FormData();
     data.append('video', video_blob);
