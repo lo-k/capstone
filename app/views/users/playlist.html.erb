@@ -15,7 +15,7 @@
   <% end %>
 
   <br>
-  <%= link_to selfie_path , class: "btn upload-again" do %>
+  <%= link_to selfie_path , class: "btn upload-again", data: { no_turbolink: true } do %>
     <span class="glyphicon glyphicon-equalizer"></span>
     <h4>Upload Another Selfie</h4>
   <% end %>
