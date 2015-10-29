@@ -43,14 +43,16 @@ class UsersController < ApplicationController
         puts "UPDATE: Video processing complete. Starting analysis of results."
         
         emo_results = EmotientApi.analyze_video(video_id)
-        puts "UPDATE: Emotion results = " + emo_results
+        puts "UPDATE: Emotion results = "
+        puts emo_results
         
         playlist_category = EmoPlaylistCalc.select_playlist_category(emo_results)
         puts "UPDATE: Playlist category = " + playlist_category
         
         @playlist_uri = SpotifyApi.new.get_playlist(playlist_category)
         @emotions_percents_hash = ApiHelper.create_emo_percents_hash(emo_results)
-        puts 'UPDATE: Emotions = ' + @emotions_percents_hash
+        puts 'UPDATE: Emotions = ' 
+        puts @emotions_percents_hash
       else 
         flash[:error] = "There was an error with processing your video. Please try a new video."
         puts "UPDATE: There was an error on Emotient's side with processing the video."
