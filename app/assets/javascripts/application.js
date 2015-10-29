@@ -24,7 +24,6 @@ $(document).ready( function() {
 
   $('.submit-upload').hide();
   $('.record-box').css("height", 0);
-  // $("video.recorder").hide();
   
   // hide all buttons
   $('#record-button').hide();
@@ -52,7 +51,8 @@ $(document).ready( function() {
     $('#video-upload').children('span').addClass('glyphicon-facetime-video');
     $('#video-upload').children('h4').hide();
     
-    // Is taken care of with single button on mobile ^
+    // Video capture is taken care of with 
+    // single button on mobile ^
     $('#video-capture').hide();
     $('.file-formats').hide();
   }
@@ -133,7 +133,8 @@ $(document).ready( function() {
 
     console.log('submitted file');
 
-    setTimeout(function() {    
+    setTimeout(function() { 
+      $('.main-content').hide();   
       $('.waiting-animation').show();
       $('.waiting-animation > h4').addClass('animate');
       $('#e1, #e2, #e3, #e4').addClass('animate');
@@ -194,9 +195,6 @@ $(document).ready( function() {
       video.src = window.URL.createObjectURL(stream);
       video.width = videoWidth;
       video.height = videoHeight;
-
-      // init recorder
-      // video_recorder = RecordRTC(stream, videoOptions);
 
       // show player
       $("video.recorder").show();
@@ -326,7 +324,7 @@ $(document).ready( function() {
     stopRecording();
   });
 
-  // Upload video (FROM SAMPLE DEMO)
+  // Upload recorded video
   $("#upload-button").click(function(){
     console.log('uploading');
 
@@ -334,11 +332,11 @@ $(document).ready( function() {
 
     var request = new XMLHttpRequest();
 
-    request.onreadystatechange = function () {
-      if (request.readyState == 4 && request.status == 200) {
-        window.location.href = "/video/"+request.responseText;
-      }
-    };
+    // request.onreadystatechange = function () {
+    //   if (request.readyState == 4 && request.status == 200) {
+    //     window.location.href = "/video/"+request.responseText;
+    //   }
+    // };
 
     var data = new FormData();
     data.append('video', video_blob);
@@ -348,6 +346,7 @@ $(document).ready( function() {
   });
 
   function displayAnimation() {
+    $('.main-content').hide();
     $('.waiting-animation').show();
     $('.waiting-animation > h4').addClass('animate');
     $('#e1, #e2, #e3, #e4').addClass('animate');
@@ -372,13 +371,6 @@ $(document).ready( function() {
   //     }
   //   });
   // }
-
-  // $('#upload-button').click(function() {
-  //   // submit the video to upload_video controller application
-  //   console.log(video_blob);
-
-  //   postVideo(video_blob);
-  // });
 
   $('#cancel-button').click(function() {
     cancelVideo();

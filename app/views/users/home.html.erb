@@ -1,48 +1,50 @@
 
 <div class="upload-page">
-  <h2>Good <%= @greeting %>, <span><%= image_tag "spotify_icon.png" %><%= @user.name %>!</span></h2>
-  <h4>Let's find you something to listen to.</h4>
-  <h5>Turn a video selfie into a music playlist.</h5>
+  <div class="main-content">
+    <h2>Good <%= @greeting %>, <span><%= image_tag "spotify_icon.png" %><%= @user.name %>!</span></h2>
+    <h4>Let's find you something to listen to.</h4>
+    <h5>Turn a video selfie into a music playlist.</h5>
 
-  <div class="submit-choices">
-    <div id="video-upload" class="video-choice btn">
-      <span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
+    <div class="submit-choices">
+      <div id="video-upload" class="video-choice btn">
+        <span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
+      </div>
+      <div id="video-capture" class="video-choice btn">
+        <span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span>
+      </div>
     </div>
-    <div id="video-capture" class="video-choice btn">
-      <span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span>
+
+    <div class="upload-box">
+      <p class="error-message"></p>
+
+      <p class="file-formats">Accepted file formats: AVI, MOV, MP4, MPG, WMV, WEBM</p>
+      <p>(Video must be 10-20 seconds long)</p>
+
+      <%= form_tag(playlist_path, multipart: true) do %>
+        <div class="form-group">
+            <%= file_field_tag :video, accept: "video/*", capture: "camcorder" , id: "capture"%>
+
+            <%= submit_tag 'Upload', class: "btn submit-upload", disabled: "disabled" %>
+          </div>
+      <% end %>
     </div>
+
+    <div class="record-box">
+      <div id='player'>
+        <video class='recorder' autoplay ></video>
+      </div>
+      <div class="video-control-buttons">
+        <div id="timer"><span id="minutes">00</span><span>:</span><span id="seconds">00</span></div>
+        <div id='record-button' class="btn vid-btn"><h4>start</h4></div>
+        <div id='stop-recording-button' class="btn vid-btn"><h4>stop</h4></div>
+        <div id='upload-button' class="btn vid-btn"><h4>upload</h4></div>
+        <div id='cancel-button' class="btn">Cancel</div>
+      </div>
+    </div>
+
+    <br>
+    <%= link_to "Not you? Sign out", signout_path %>
   </div>
-
-  <div class="upload-box">
-    <p class="error-message"></p>
-
-    <p class="file-formats">Accepted file formats: AVI, MOV, MP4, MPG, WMV, WEBM</p>
-    <p>(Video must be 10-20 seconds long)</p>
-
-    <%= form_tag(playlist_path, multipart: true) do %>
-      <div class="form-group">
-          <%= file_field_tag :video, accept: "video/*", capture: "camcorder" , id: "capture"%>
-
-          <%= submit_tag 'Upload', class: "btn submit-upload", disabled: "disabled" %>
-        </div>
-    <% end %>
-  </div>
-
-  <div class="record-box">
-    <div id='player'>
-      <video class='recorder' autoplay ></video>
-    </div>
-    <div class="video-control-buttons">
-      <div id="timer"><span id="minutes">00</span><span>:</span><span id="seconds">00</span></div>
-      <div id='record-button' class="btn vid-btn"><h4>start</h4></div>
-      <div id='stop-recording-button' class="btn vid-btn"><h4>stop</h4></div>
-      <div id='upload-button' class="btn vid-btn"><h4>upload</h4></div>
-      <div id='cancel-button' class="btn">Cancel</div>
-    </div>
-  </div>
-
-  <br>
-  <%= link_to "Not you? Sign out", signout_path %>
 
   <div class="waiting-animation">
     <h4>Processing emotional content ...</h4>
