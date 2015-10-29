@@ -237,6 +237,89 @@ input[type="file"] {
 }
 
 // ***************************************
+// VIDEO PROCESSING ANIMATION
+// ***************************************
+
+.waiting-animation {
+  padding: 50px;
+  width: 100%;
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #000;
+}
+
+.waiting-animation h4 {
+  animation: bubble-fade 4s infinite ease-in-out;
+}
+
+@keyframes bubble-fade {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.equalizer {
+  margin: 20px auto;
+}
+
+#height-holder {
+  height: 40px;
+  width: 1px;
+  display: inline-block;
+}
+
+.bar {
+  width: 5px;
+  background-color: #fff;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+#e1{
+  animation: equalizer-pulse-first 2s infinite;
+}
+
+#e2 {
+  animation: equalizer-pulse-second 1s infinite;
+}
+
+#e3 {
+  animation: equalizer-pulse-third 2s infinite;
+}
+
+#e4 {
+  animation: equalizer-pulse-fourth 1s infinite;
+}
+
+@keyframes equalizer-pulse-first {
+  0% { height: 10px; }
+  50% { height: 20px; }
+  100% { height: 10px; }
+}
+
+@keyframes equalizer-pulse-second {
+  0% { height: 30px; }
+  50% { height: 10px; }
+  100% { height: 30px; }
+}
+
+@keyframes equalizer-pulse-third {
+  0% { height: 20px; }
+  40% { height: 10px; }
+  60% { height: 30px; }
+  100% { height: 20px; }
+}
+
+@keyframes equalizer-pulse-fourth {
+  0% { height: 20px; }
+  50% { height: 15px; }
+  100% { height: 20px; }
+}
+
+// ***************************************
 // PLAYLIST PAGE
 // ***************************************
 
