@@ -18,6 +18,8 @@
 
 $(document).ready( function() {
 
+  $('.waiting-animation').hide();
+
 // ---------------------- VIDEO SETUP ----------------------
 
   $('.submit-upload').hide();
@@ -121,8 +123,29 @@ $(document).ready( function() {
         $('.submit-upload').show(); 
         $('.error-message').html('');
       }
-
   });
+
+  // Start animation after submitting the form
+
+  $('form').submit(function() {
+    $('.waiting-animation').show();
+    $('.waiting-animation > h4').addClass('animate');
+    $('#e1').addClass('animate');
+    $('#e2').addClass('animate');
+    $('#e3').addClass('animate');
+    $('#e4').addClass('animate');
+
+    setTimeout(firstDelayMsg, 60000);
+    setTimeout(secondDelayMsg, 120000);
+  });
+
+  var firstDelayMsg = function() {
+    $('.waiting-animation > h4').html('Geez your video has a lot of emotions...');
+  }
+
+  var secondDelayMsg = function() {
+    $('.waiting-animation > h4').html('Too many people music selfie-ing (selfy-ing?). Sorry for the delay...');
+  }
 
 // ---------------------- WEBCAM VIDEO ----------------------
 
