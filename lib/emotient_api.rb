@@ -20,7 +20,7 @@ class EmotientApi
     status = "OK"
 
     if ACCEPTED_VID_FORMATS.exclude?(video.content_type)
-      status = "video is not in the correct format"
+      status = "Video is not in the correct format"
     # elsif video.size < MIN_VID_SIZE
     #   status = "video is too small"
     # elsif video.size > MAX_VID_SIZE
@@ -46,7 +46,6 @@ class EmotientApi
       :headers => { 'Authorization' => ENV['EMOTIENT_KEY'] })
 
     status = response.parsed_response["status"]
-    # status = "Analyzing"
 
     return status
   end
